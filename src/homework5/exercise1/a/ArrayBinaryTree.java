@@ -2,7 +2,10 @@ package homework5.exercise1.a;
 
 import homework5.exercise1.BinaryTreeInterface;
 
-public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
+import java.util.Arrays;
+import java.util.Iterator;
+
+public class ArrayBinaryTree<E extends Comparable<E>, T> implements BinaryTreeInterface<T> {
     // [0,  0A,  0B,    0A+,  0A-,   0B+,   OB-,  0A+^,0A+*,0A-^,0A-*,0B+^,0B+*,OB-^,OB-*]
     // 2^0, 2^1, 2^1+1, 2^2,  2^2+1, 2^2+2, 2^2+3, ...
     // 0     1     2    3      4      5      6     7 ...
@@ -12,6 +15,11 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 
     public ArrayBinaryTree() {
         array = (E[]) new Object[defaultsize];
+    }
+
+    @Override
+    public void setData(Object data) {
+        this.array = (E[]) data;
     }
 
     @Override
@@ -41,13 +49,16 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 
     @Override
     public T left(T p) {
-        return (T) array[((int) p) * 2 + 1];
+        Integer leftPos = ((int) p) * 2 + 1;
+        return (leftPos < defaultsize) ? (T) leftPos : null;
     }
 
     @Override
     public T right(T p) {
-        return (T) array[((int) p) * 2 + 2];
+        Integer rightPos = ((int) p) * 2 + 2;
+        return (rightPos < defaultsize) ? (T) rightPos : null;
     }
+
 
     @Override
     public T sibling(T p) {
@@ -63,5 +74,23 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
         if (left(p) != null) numChil(left(p));
         if (right(p) != null) numChil(right(p));
         return ++count;
+    }
+
+    private void printTree(T pos, StringBuilder builder) {
+        if (array[(int) pos] == null)
+            return;
+
+        if (right(pos) != null) printTree(right(pos),builder);
+        if (left(pos) != null) printTree(left(pos),builder);
+
+        builder.append(array[(int) pos]);
+    }
+
+    @Override
+    public String toString() {
+        if (array == null || array[0] == null) return null;
+        StringBuilder builder = new StringBuilder();
+//        printTree(new Integer(0), builder);
+        return builder.toString();
     }
 }

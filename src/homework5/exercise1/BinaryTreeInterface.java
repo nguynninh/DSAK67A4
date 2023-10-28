@@ -16,4 +16,5 @@ public interface BinaryTreeInterface<T> {
     T right(T p); // return right child of p
 
     T sibling(T p); // return sibling of p
+    void setData(Object data);
 }

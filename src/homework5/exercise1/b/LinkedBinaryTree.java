@@ -2,22 +2,58 @@ package homework5.exercise1.b;
 
 import homework5.exercise1.BinaryTreeInterface;
 
-public class LinkedBinaryTree<E, T extends Comparable<T>> implements BinaryTreeInterface<T> {
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-    protected static class Node<E> {
+public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeInterface<T> {
+
+    public static class Node<E> {
         private E data; // an data stored at this node
         private Node<E> parent; // a reference to the parent node (if any)
         private Node<E> left; // a reference to the left child
         private Node<E> right; // a reference to the right child
 
         // Constructs a node with the given data and neighbors .
-
         public Node(E data, Node<E> parent, Node<E> left, Node<E> right) {
             this.data = data;
             this.parent = parent;
             this.left = left;
             this.right = right;
         }
+
+        public Node<E> getParent() {
+            return parent;
+        }
+
+        public Node<E> getLeft() {
+            return left;
+        }
+
+        public Node<E> getRight() {
+            return right;
+        }
+
+        public void setData(E data) {
+            this.data = data;
+        }
+
+        public E getData() {
+            return data;
+        }
+
+        public void setParent(Node<E> parent) {
+            this.parent = parent;
+        }
+
+        public void setLeft(Node<E> left) {
+            this.left = left;
+        }
+
+        public void setRight(Node<E> right) {
+            this.right = right;
+        }
+
     }
 
     private Node root;
@@ -25,7 +61,12 @@ public class LinkedBinaryTree<E, T extends Comparable<T>> implements BinaryTreeI
 
     @Override
     public T root() {
-        return (T) root.data;
+        return (T) root;
+    }
+
+    @Override
+    public void setData(Object data) {
+        this.root = (Node) data;
     }
 
     @Override
@@ -76,5 +117,28 @@ public class LinkedBinaryTree<E, T extends Comparable<T>> implements BinaryTreeI
         if (p.right != null) numChild(p.right);
 
         return ++count;
+    }
+
+    private void printTree(Node root, boolean isLeft, List<String> list, StringBuilder builder) {
+        if (root == null) return;
+
+        list.add("\t");
+
+        printTree(root.right, true, list, builder);
+
+        for (String s : list)
+            builder.append(s);
+        builder.append(root.data).append("\n");
+
+        printTree(root.left, false, list, builder);
+
+        list.remove(list.size() - 1);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        printTree(root,false,new ArrayList<>(),builder);
+        return builder.toString();
     }
 }
