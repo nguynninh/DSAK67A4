@@ -2,24 +2,31 @@ package homework5.exercise1.a;
 
 import homework5.exercise1.BinaryTreeInterface;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 
-public class ArrayBinaryTree<E extends Comparable<E>, T> implements BinaryTreeInterface<T> {
+public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     // [0,  0A,  0B,    0A+,  0A-,   0B+,   OB-,  0A+^,0A+*,0A-^,0A-*,0B+^,0B+*,OB-^,OB-*]
     // 2^0, 2^1, 2^1+1, 2^2,  2^2+1, 2^2+2, 2^2+3, ...
     // 0     1     2    3      4      5      6     7 ...
     private E[] array;
     private int size = 0;
-    private final int defaultsize = 100;
+    private final int defaultSize = 100;
 
     public ArrayBinaryTree() {
-        array = (E[]) new Object[defaultsize];
+        array = (E[]) new Object[defaultSize];
     }
 
     @Override
     public void setData(Object data) {
-        this.array = (E[]) data;
+
+    }
+
+    public void setData(Object[] data) {
+        for (int i = 0; i < data.length; i++)
+            this.array[i] = (E) data[i];
+        size = data.length;
     }
 
     @Override
@@ -50,13 +57,13 @@ public class ArrayBinaryTree<E extends Comparable<E>, T> implements BinaryTreeIn
     @Override
     public T left(T p) {
         Integer leftPos = ((int) p) * 2 + 1;
-        return (leftPos < defaultsize) ? (T) leftPos : null;
+        return (leftPos < defaultSize) ? (T) leftPos : null;
     }
 
     @Override
     public T right(T p) {
         Integer rightPos = ((int) p) * 2 + 2;
-        return (rightPos < defaultsize) ? (T) rightPos : null;
+        return (rightPos < defaultSize) ? (T) rightPos : null;
     }
 
 
@@ -76,21 +83,31 @@ public class ArrayBinaryTree<E extends Comparable<E>, T> implements BinaryTreeIn
         return ++count;
     }
 
-    private void printTree(T pos, StringBuilder builder) {
-        if (array[(int) pos] == null)
-            return;
+    public void printArray() {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+    }
 
-        if (right(pos) != null) printTree(right(pos),builder);
-        if (left(pos) != null) printTree(left(pos),builder);
-
-        builder.append(array[(int) pos]);
+    public void printTree(int p, int level, StringBuilder builder) {
+        if (p <= size && array[p] != null) {
+            printTree(2 * p + 1, level + 1, builder);
+            if (level != 0) {
+                for (int i = 0; i < level; i++) {
+                    builder.append("\t\t");
+                }
+                builder.append(array[p] + "\n");
+            } else {
+                builder.append((Integer) array[p]);
+            }
+            printTree(2 * p + 2, level + 1, builder);
+        }
     }
 
     @Override
     public String toString() {
-        if (array == null || array[0] == null) return null;
         StringBuilder builder = new StringBuilder();
-//        printTree(new Integer(0), builder);
+        printTree(0, 0, builder);
         return builder.toString();
     }
 }

@@ -2,6 +2,10 @@ package homework5.exercise1.b;
 
 import homework5.exercise1.BinaryTreeInterface;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class MainTest {
     public static void main(String[] args) {
         BinaryTreeInterface<Integer> binaryTree = new LinkedBinaryTree<>();
@@ -28,13 +32,14 @@ public class MainTest {
         rightChild.setRight(rightChildOfRight);
 
         System.out.println(binaryTree);
-//        System.out.println("Root: " + binaryTree.root().getData());
-//        System.out.println("Left Child of Root: " + binaryTree.left(root).getData());
-//        System.out.println("Right Child of Root: " + binaryTree.right(root).getData());
-//        System.out.println("Left Child of Left Child of Root: " + binaryTree.left(leftChild).getData());
-//
-//        System.out.println("Number of Children of Root: " + binaryTree.numChildren(root));
-//        System.out.println("Number of Children of Left Child of Root: " + binaryTree.numChildren(leftChild));
+
+        try {
+            FileWriter fw = new FileWriter(new File("src/homework5/exercise1/a/array_binary_tree.txt"));
+            fw.write(binaryTree.toString());
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
