@@ -1,0 +1,17 @@
+
+p
+java:S1104"UMake listInfix a static final constant or non-public and provide accessors if needed.(«œžßøÿÿÿÿ
+r
+java:S1104	"WMake listPostfix a static final constant or non-public and provide accessors if needed.(Çñªùþÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(øñ¹É
+^
+java:S2095"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(ßÇÆç
+k
+java:S1149="PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(™Ô‹éùÿÿÿÿ
+k
+java:S1149_"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(ƒÿƒ—ùÿÿÿÿ
+N
+java:S38785"8Remove this array creation and simply pass the elements.(®Êé±
+?	java:S106X"+Replace this use of System.out by a logger.(‰ð¼t
+h
+java:S3776^"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ý»«­

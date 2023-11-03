@@ -1,0 +1,15 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰šŸÚúÿÿÿÿ8÷°×¤¹1
+>
+java:S1170"!Make this final field static too.(…ôê‘8û²×¤¹1
+ž
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ø¿Õ»8ý²×¤¹1
+L	java:S106X"+Replace this use of System.out by a logger.(¦Öç²ûÿÿÿÿ8 ³×¤¹1
+L
+java:S1905e"*Remove this unnecessary cast to "Integer".(ˆ›Ä¥ùÿÿÿÿ8§³×¤¹1
+Q
+java:S1128"/Remove this unused import 'java.io.FileWriter'.(Ã‘ÅÃýÿÿÿÿ8¯³×¤¹1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úýÿÿÿÿ8±³×¤¹1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8³³×¤¹1
