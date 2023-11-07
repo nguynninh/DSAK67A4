@@ -1,9 +1,9 @@
-package homework5.exercise2.b;
+package homework5.exercise2;
 
 import homework5.exercise1.b.LinkedBinaryTree;
 import homework5.exercise1.b.LinkedBinaryTree.Node;
 
-public class Main {
+public class MainTestExerciseB {
     public static void main(String[] args) {
         ArithmeticExpression<String> arithmetic = new ArithmeticExpression();
 

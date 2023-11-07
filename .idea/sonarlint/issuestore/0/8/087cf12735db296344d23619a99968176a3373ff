@@ -1,4 +1,9 @@
 
-g	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¿¸Û¤¹1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø´µË8®áƒ‘·1
-G	java:S106""+Replace this use of System.out by a logger.(¬™ú‡8¾áƒ‘·1
+G	java:S106#"+Replace this use of System.out by a logger.(¬™ú‡8¾áƒ‘·1
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8§‚¯¹1
+Q
+java:S1128"/Remove this unused import 'java.io.FileWriter'.(Ã‘ÅÃıÿÿÿÿ8§‚¯¹1
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8§‚¯¹1

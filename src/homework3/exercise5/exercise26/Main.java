@@ -6,7 +6,7 @@
 //import java.util.Iterator;
 //import java.util.Scanner;
 //
-//public class Main {
+//public class MainTestExerciseA {
 //    public static void main(String[] args) {
 //        ListInterface listInfix = new SimpleLinkedList();
 //        Scanner sc = new Scanner(System.in);

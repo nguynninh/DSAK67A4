@@ -2,8 +2,10 @@ package homework5.exercise1.b;
 
 import homework5.exercise1.BinaryTreeInterface;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeInterface<T> {
@@ -56,8 +58,8 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
 
     }
 
-    private Node root;
-    private int size;
+    protected Node root;
+    protected int size;
 
     @Override
     public T root() {
@@ -66,7 +68,7 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
 
     @Override
     public void setData(Object data) {
-        this.root = (Node) data;
+        this.root = (Node<E>) data;
     }
 
     @Override
@@ -126,13 +128,26 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
 
         printTree(root.right, true, list, builder);
 
-        for (String s : list)
-            builder.append(s);
+        for (int i = 0; i < list.size() - 1; i++)
+            builder.append(list.get(i));
         builder.append(root.data).append("\n");
 
         printTree(root.left, false, list, builder);
 
         list.remove(list.size() - 1);
+    }
+
+    @Override
+    public boolean addDataToFile() {
+        try {
+            final String file = "src/homework5/exercise1/b/linked_binary_tree.txt";
+            FileWriter fw = new FileWriter(file);
+            fw.write(toString());
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 
     @Override

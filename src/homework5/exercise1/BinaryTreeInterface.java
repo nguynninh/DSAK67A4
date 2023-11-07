@@ -17,4 +17,6 @@ public interface BinaryTreeInterface<T> {
 
     T sibling(T p); // return sibling of p
     void setData(Object data);
+
+    boolean addDataToFile();
 }

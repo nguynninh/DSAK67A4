@@ -2,9 +2,10 @@ package homework5.exercise1.a;
 
 import homework5.exercise1.BinaryTreeInterface;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     // [0,  0A,  0B,    0A+,  0A-,   0B+,   OB-,  0A+^,0A+*,0A-^,0A-*,0B+^,0B+*,OB-^,OB-*]
@@ -20,13 +21,11 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 
     @Override
     public void setData(Object data) {
-
-    }
-
-    public void setData(Object[] data) {
-        for (int i = 0; i < data.length; i++)
-            this.array[i] = (E) data[i];
-        size = data.length;
+        if (data instanceof Object[]) {
+            Object[] objectArray = (Object[]) data;
+            for (Object o : objectArray)
+                array[size++] = (E) o;
+        }
     }
 
     @Override
@@ -102,6 +101,19 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
             }
             printTree(2 * p + 2, level + 1, builder);
         }
+    }
+
+    @Override
+    public boolean addDataToFile() {
+        try {
+            final String file = "src/homework5/exercise1/a/array_binary_tree.txt";
+            FileWriter fw = new FileWriter(file);
+            fw.write(toString());
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 
     @Override

@@ -31,15 +31,8 @@ public class MainTest {
         LinkedBinaryTree.Node<Integer> rightChildOfRight = new LinkedBinaryTree.Node<>(7, leftChild, null, null);
         rightChild.setRight(rightChildOfRight);
 
+        binaryTree.addDataToFile();
         System.out.println(binaryTree);
-
-        try {
-            FileWriter fw = new FileWriter(new File("src/homework5/exercise1/a/array_binary_tree.txt"));
-            fw.write(binaryTree.toString());
-            fw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 }

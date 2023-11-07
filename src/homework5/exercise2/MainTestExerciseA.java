@@ -1,10 +1,10 @@
-package homework5.exercise2.a;
+package homework5.exercise2;
 
 import homework5.exercise1.b.LinkedBinaryTree;
 
-public class Main {
+public class MainTestExerciseA {
     public static void main(String[] args) {
-        ExpressionTree<Integer> expressionTree = new ExpressionTree<>();
+        ArithmeticExpression<Integer> arithmeticExpression = new ArithmeticExpression<>();
 
         LinkedBinaryTree.Node<Integer> root = new LinkedBinaryTree.Node<>(1, null, null, null);
 
@@ -26,10 +26,10 @@ public class Main {
         LinkedBinaryTree.Node<Integer> rightChildOfRight = new LinkedBinaryTree.Node<>(7, rightChild, null, null);
         rightChild.setRight(rightChildOfRight);
 
-        expressionTree.preorderPrint(root);
+        arithmeticExpression.preorderPrint(root);
         System.out.println("\n");
-        expressionTree.inorderPrint(root);
+        arithmeticExpression.inorderPrint(root);
         System.out.println("\n");
-        expressionTree.postorderPrint(root);
+        arithmeticExpression.postorderPrint(root);
     }
 }
