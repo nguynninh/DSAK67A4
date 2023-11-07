@@ -1,0 +1,14 @@
+
+Q
+java:S3740
+"/Provide the parametrized type for this generic.(ó†½ÿÿÿÿÿ8Ö×À®¹1
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŠˆĞ8Ø×À®¹1
+r
+java:S1149_"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(™Ô‹éùÿÿÿÿ8ã×À®¹1
+F
+java:S1905")Remove this unnecessary cast to "Object".(ÓŒÿ8ä×À®¹1
+G	java:S106'"+Replace this use of System.out by a logger.(¿ÕÃ8å×À®¹1
+G	java:S1069"+Replace this use of System.out by a logger.(¿ÕÃ8æ×À®¹1
+G	java:S106D"+Replace this use of System.out by a logger.(¿ÕÃ8ç×À®¹1
+U
+java:S3878J"8Remove this array creation and simply pass the elements.(®Êé±8ç×À®¹1
