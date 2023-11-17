@@ -314,12 +314,8 @@ e
 5src/homework6/exercise2/TestMinHeapPriorityQueue.java,d\b\dbe1f86c54edae9f11602c777baefd97de52931b
 T
 $src/homework7/exercise1/TreeADT.java,7\3\73bc0a5b6a69568cc5e3db0dff044c68a96b2210
-U
-%src/homework7/exercise1/Tranvert.java,8\0\80b7f4c00e0b6c267ce6d1b5640888cefbcbf584
 ]
 -src/homework7/exercise1/TreeTraverseType.java,4\4\4426252762a445e52286c93ab16b123f6c5eaac9
-]
--src/homework7/exercise1/BinarySearchTree.java,d\8\d80e96dfda7323c8fe9ac902aaeaeb01e6bc304d
 Q
 !src/homework7/exercise1/Node.java,2\8\289d056a10da17dc11413154a443432683c65ab7
 l
