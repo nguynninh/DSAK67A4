@@ -118,7 +118,7 @@ VALUES ('009', 1, 1, 32.0),
 CREATE TABLE THANNHAN
 (
     MA_NVIEN VARCHAR(9)  NOT NULL,
-    TENTN    VARCHAR(15) NOT NULL ,
+    TENTN    VARCHAR(15) NOT NULL,
     PHAI     VARCHAR(3)  NOT NULL,
     NGSINH   DATE        NOT NULL,
     QUANHE   VARCHAR(15) NOT NULL,
@@ -156,8 +156,91 @@ ALTER TABLE PHANCONG
     ADD FOREIGN KEY (MA_NVIEN) REFERENCES NHANVIEN (MANV);
 
 ALTER TABLE PHANCONG
-    ADD FOREIGN KEY (MADA,STT) REFERENCES CONGVIEC (MADA,STT);
+    ADD FOREIGN KEY (MADA, STT) REFERENCES CONGVIEC (MADA, STT);
 
 
 ALTER TABLE THANNHAN
     ADD FOREIGN KEY (MA_NVIEN) REFERENCES NHANVIEN (MANV);
+
+#Bai 1
+SELECT DISTINCT pc.MADA
+FROM phancong pc
+WHERE pc.MA_NVIEN IN (SELECT nv.MANV
+                      FROM nhanvien nv,
+                           phongban pb
+                      WHERE nv.HONV LIKE 'Đinh%' AND nv.PHG = pb.MAPHG
+                         OR nv.MANV = pb.TRPHG AND nv.HONV LIKE 'Đinh%');
+
+#Bai 2
+SELECT HONV, TENLOT, TENNV
+FROM nhanvien
+WHERE (SELECT COUNT(*)
+       FROM thannhan
+       WHERE MA_NVIEN = MANV) >= 2;
+
+#Bai 3
+SELECT HONV, TENLOT, TENNV
+FROM nhanvien
+WHERE (SELECT COUNT(*)
+       FROM thannhan
+       WHERE MA_NVIEN = MANV) = 0;
+
+#Bai 4
+SELECT HONV, TENLOT, TENNV
+FROM nhanvien
+WHERE (SELECT COUNT(*)
+       FROM thannhan
+       WHERE MA_NVIEN = MANV) >= 1;
+
+
+#Bai 5
+SELECT nv.HONV, nv.TENLOT, nv.TENNV
+FROM nhanvien nv
+         JOIN PHONGBAN pb ON pb.TRPHG = nv.MANV
+WHERE (SELECT COUNT(*)
+       FROM thannhan tn
+       WHERE tn.MA_NVIEN = nv.MANV) = 0;
+
+#Bai 6
+SELECT HONV, TENLOT, TENNV
+FROM nhanvien
+WHERE LUONG > (SELECT AVG(LUONG)
+               FROM PHONGBAN pb,
+                    NHANVIEN nc
+               WHERE pb.TENPHG = 'Nghiên cứu'
+                 AND pb.MAPHG = nc.PHG);
+
+#Bai 7
+SELECT pb.TENPHG, nv.HONV, nv.TENLOT, nv.TENNV
+FROM phongban pb
+         JOIN nhanvien nv ON pb.TRPHG = nv.MANV
+ORDER BY (SELECT COUNT(*) FROM nhanvien WHERE PHG = pb.MAPHG) DESC
+LIMIT 1;
+
+#Câu 8
+SELECT DISTINCT cv.MADA
+FROM congviec cv
+WHERE MADA NOT IN (SELECT pc.MADA
+                   FROM phancong pc
+                   WHERE pc.MA_NVIEN = '009'
+                   );
+
+#Câu 9
+SELECT cv.TEN_CONG_VIEC
+FROM dean da
+         JOIN CONGVIEC cv on da.MADA = cv.MADA
+WHERE da.TENDA LIKE 'Sản phẩm X%'
+  AND NOT EXISTS (SELECT *
+                  FROM phancong pc
+                  WHERE pc.MADA = da.MADA
+                    AND pc.MA_NVIEN LIKE '009');
+
+#Cau 11
+SELECT DISTINCT CONCAT(nv.HONV, ' ', nv.TENLOT, ' ', nv.TENNV) AS "HO_TEN_NHAN_VIEN", nv.DCHI
+FROM PHANCONG pc
+         JOIN DEAN da ON da.MADA = pc.MADA
+         JOIN NHANVIEN nv ON nv.MANV = pc.MA_NVIEN
+WHERE NOT EXISTS(SELECT *
+                 FROM DIADIEM_PHG ddp
+                 WHERE da.DDIEM_DA = ddp.DIADIEM
+                   AND nv.PHG = ddp.MAPHG);
