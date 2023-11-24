@@ -1,6 +1,7 @@
 package homework3.exercise2;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class SimpleArrayList<T> implements ListInterface<T> {
@@ -82,6 +83,22 @@ public class SimpleArrayList<T> implements ListInterface<T> {
         }
         return false;
     }
+
+    @Override
+    public int lastIndexOf(T data) {
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (data.equals(array[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    @Override
+    public void sort() {
+        Arrays.sort(array, 0, size);
+    }
+
 
     @Override
     public int size() {

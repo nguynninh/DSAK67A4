@@ -10,7 +10,7 @@ import java.util.List;
 
 public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeInterface<T> {
 
-    public static class Node<E> {
+    public static class Node<E extends Comparable<E>> {
         private E data; // an data stored at this node
         private Node<E> parent; // a reference to the parent node (if any)
         private Node<E> left; // a reference to the left child
@@ -22,6 +22,10 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
             this.parent = parent;
             this.left = left;
             this.right = right;
+        }
+
+        public Node(E data) {
+            this.data = data;
         }
 
         public Node<E> getParent() {
@@ -58,12 +62,16 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
 
     }
 
-    protected Node root;
+    protected Node<E> root;
     protected int size;
 
     @Override
     public T root() {
         return (T) root;
+    }
+
+    public void addRoot(E value) {
+        root = new Node<>(value, null, null, null);
     }
 
     @Override
@@ -83,33 +91,37 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
 
     @Override
     public int numChildren(T p) {
-        return numChild(((Node<T>) p));
+        return numChild(((Node<E>) p));
     }
 
+    // Return parent of p
     @Override
     public T parent(T p) {
-        return ((Node<T>) p).data;
+        return (T) ((Node<E>) p).parent;
     }
 
+    // Return left child of p
     @Override
     public T left(T p) {
-        return (T) ((Node<T>) p).left;
+        return (T) ((Node<E>) p).left;
     }
 
+    // Return right child of p
     @Override
     public T right(T p) {
-        return (T) ((Node<T>) p).right;
+        return (T) ((Node<E>) p).right;
     }
 
+    // Return sibling of p
     @Override
     public T sibling(T p) {
-        return (T) ((((Node<T>) p).parent.left == (Node<T>) p)
-                ? ((Node<T>) p).parent.left
-                : ((Node<T>) p).parent.right);
+        return (T) ((((Node<E>) p).parent.left == (Node<E>) p)
+                ? ((Node<E>) p).parent.left
+                : ((Node<E>) p).parent.right);
     }
 
     //PRIVATE
-    private int numChild(Node<T> p) {
+    private int numChild(Node<E> p) {
         int count = 0;
 
         if (p == null)
@@ -153,7 +165,7 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        printTree(root,false,new ArrayList<>(),builder);
+        printTree(root, false, new ArrayList<>(), builder);
         return builder.toString();
     }
 }

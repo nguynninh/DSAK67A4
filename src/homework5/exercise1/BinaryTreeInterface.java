@@ -9,9 +9,9 @@ public interface BinaryTreeInterface<T> {
 
     int numChildren(T p); // nmber of children of element p;
 
-    T parent(T p); // return parent of p
+    T parent(T p); // Return parent of p
 
-    T left(T p); // return left child of p
+    T left(T p); // Return left child of p
 
     T right(T p); // return right child of p
 

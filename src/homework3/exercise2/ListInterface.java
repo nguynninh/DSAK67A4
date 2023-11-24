@@ -14,6 +14,10 @@ public interface ListInterface<T> extends Iterable<T> {
 
     boolean isContain(T data);
 
+    int lastIndexOf(T data);
+
+    void sort();
+
     int size();
 
     boolean isEmpty();

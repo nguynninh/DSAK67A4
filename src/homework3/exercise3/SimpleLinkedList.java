@@ -134,6 +134,29 @@ public class SimpleLinkedList<T> implements ListInterface<T> {
     }
 
     @Override
+    public int lastIndexOf(T data) {
+        int lastIndex = -1;
+        int index = 0;
+
+        Node<T> current = head;
+
+        while (current != null) {
+            if (data.equals(current.getData())) {
+                lastIndex = index;
+            }
+            current = current.next;
+            index++;
+        }
+
+        return lastIndex;
+    }
+
+    @Override
+    public void sort() {
+        head = mergeSort(head);
+    }
+
+    @Override
     public int size() {
         return size;
     }
@@ -182,4 +205,61 @@ public class SimpleLinkedList<T> implements ListInterface<T> {
     private void checkBoundaries(int index, int size) {
         if (index < 0 || index > size) throw new ArrayIndexOutOfBoundsException();
     }
+
+    private Node mergeSort(Node start) {
+        if (start == null || start.getNext() == null) {
+            return start;
+        }
+
+        Node middle = getMiddle(start);
+        Node nextToMiddle = middle.getNext();
+
+        middle.setNext(null);
+
+        Node left = mergeSort(start);
+        Node right = mergeSort(nextToMiddle);
+
+        return merge(left, right);
+    }
+
+    private Node merge(Node left, Node right) {
+        Node result = null;
+
+        if (left == null) {
+            return right;
+        }
+        if (right == null) {
+            return left;
+        }
+
+        if (((Comparable<T>) left.getData()).compareTo((T) right.getData()) <= 0) {
+            result = left;
+            result.setNext(merge(left.getNext(), right));
+        } else {
+            result = right;
+            result.setNext(merge(left, right.getNext()));
+        }
+
+        return result;
+    }
+
+    private Node getMiddle(Node start) {
+        if (start == null) {
+            return start;
+        }
+
+        Node slow = start;
+        Node fast = start.getNext();
+
+        while (fast != null) {
+            fast = fast.getNext();
+            if (fast != null) {
+                slow = slow.getNext();
+                fast = fast.getNext();
+            }
+        }
+
+        return slow;
+    }
+
 }

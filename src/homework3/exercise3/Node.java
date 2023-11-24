@@ -1,5 +1,7 @@
 package homework3.exercise3;
 
+import java.util.Arrays;
+
 public class Node<T> {
     private T data;
     public Node next;
