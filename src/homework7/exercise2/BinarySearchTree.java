@@ -2,7 +2,7 @@ package homework7.exercise2;
 
 import homework5.exercise1.b.LinkedBinaryTree;
 
-public class BinarySeachTree<E extends Comparable<E>, T> extends LinkedBinaryTree<E, T> {
+public class BinarySearchTree<E extends Comparable<E>, T> extends LinkedBinaryTree<E, T> {
 
     public Node<E> findMin() {
         Node<E> node = (Node<E>) root();
@@ -11,6 +11,7 @@ public class BinarySeachTree<E extends Comparable<E>, T> extends LinkedBinaryTre
         }
         return node;
     }
+
 
     public Node<E> search(E value) {
         Node<E> node = (Node<E>) root();

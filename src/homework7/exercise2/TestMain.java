@@ -4,7 +4,7 @@ import homework5.exercise1.b.LinkedBinaryTree;
 
 public class TestMain {
     public static void main(String[] args) {
-        BinarySeachTree<Integer, LinkedBinaryTree.Node<Integer>> bst = new BinarySeachTree<>();
+        BinarySearchTree<Integer, LinkedBinaryTree.Node<Integer>> bst = new BinarySearchTree<>();
 
         // Insert values into the BST
         bst.insert(50);

@@ -1,14 +1,12 @@
 package homework8.exercise1;
 
-public class Edge<T> {
+public class UndirectedGraphEdge<T> {
     private T source;
     private T destination;
-    private int weight;
 
-    public Edge(T source, T destination, int weight) {
+    public UndirectedGraphEdge(T source, T destination) {
         this.source = source;
         this.destination = destination;
-        this.weight = weight;
     }
 
     public T getSource() {
@@ -19,7 +17,8 @@ public class Edge<T> {
         return destination;
     }
 
-    public int getWeight() {
-        return weight;
+    @Override
+    public String toString() {
+        return "(" + source + ", " + destination + ")";
     }
 }

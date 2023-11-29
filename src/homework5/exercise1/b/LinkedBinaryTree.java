@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeInterface<T> {
 
@@ -79,6 +80,10 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
         this.root = (Node<E>) data;
     }
 
+    public void insertValue(E value) {
+        root = insertRec(root, value);
+    }
+
     @Override
     public int size() {
         return size;
@@ -120,6 +125,30 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
                 : ((Node<E>) p).parent.right);
     }
 
+    public boolean searchValue(E value){
+        return searchRec(root, value);
+    }
+
+    @Override
+    public boolean addDataToFile() {
+        try {
+            final String file = "src/homework5/exercise1/b/linked_binary_tree.txt";
+            FileWriter fw = new FileWriter(file);
+            fw.write(toString());
+            fw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        printTree(root, false, new ArrayList<>(), builder);
+        return builder.toString();
+    }
+
     //PRIVATE
     private int numChild(Node<E> p) {
         int count = 0;
@@ -149,23 +178,28 @@ public class LinkedBinaryTree<E extends Comparable<E>, T> implements BinaryTreeI
         list.remove(list.size() - 1);
     }
 
-    @Override
-    public boolean addDataToFile() {
-        try {
-            final String file = "src/homework5/exercise1/b/linked_binary_tree.txt";
-            FileWriter fw = new FileWriter(file);
-            fw.write(toString());
-            fw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    private Node<E> insertRec(Node<E> root, E value) {
+        if (root == null) {
+            return new Node<>(value);
         }
-        return false;
+
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            root.setLeft(insertRec(root.getLeft(), value));
+        } else {
+            root.setRight(insertRec(root.getRight(), value));
+        }
+
+        return root;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        printTree(root, false, new ArrayList<>(), builder);
-        return builder.toString();
+    private boolean searchRec(Node<E> root, E value) {
+        if (root == null)
+            return false;
+
+        if (value.equals(root.getData()))
+            return true;
+
+        return searchRec(root.getLeft(), value) || searchRec(root.getRight(), value);
     }
 }
