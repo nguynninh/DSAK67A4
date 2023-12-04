@@ -1,4 +1,4 @@
-package project.snake;
+package project.main.games.gamesnake;
 
 import javax.swing.*;
 import java.awt.*;

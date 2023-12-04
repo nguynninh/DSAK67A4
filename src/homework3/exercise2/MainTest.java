@@ -2,6 +2,8 @@ package homework3.exercise2;
 
 import homework3.exercise3.SimpleLinkedList;
 
+import java.util.Vector;
+
 public class MainTest {
     public static void main(String[] args) {
         ListInterface<String> simpleArrayList = new SimpleArrayList<>();

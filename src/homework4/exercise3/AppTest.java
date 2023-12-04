@@ -1,12 +1,10 @@
 package homework4.exercise3;
 
-import homework4.exercise3.controllers.SettingPanel;
-
-import javax.swing.*;
+import homework4.exercise3.controllers.CaculatorPanel;
 
 public class AppTest {
     public static void main(String[] args) {
-        SettingPanel setting = new SettingPanel();
+        CaculatorPanel setting = new CaculatorPanel();
         setting.showWindowns();
     }
 }

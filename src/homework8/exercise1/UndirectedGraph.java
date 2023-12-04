@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class UndirectedGraph<T> implements GraphADT<T> {
+public class UndirectedGraph<T> implements GraphADT<T, Void> {
     private int[][] adjacencyMatrix;
     private List<T> vertices;
 

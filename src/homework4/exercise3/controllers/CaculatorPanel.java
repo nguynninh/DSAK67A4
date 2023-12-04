@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class SettingPanel extends JFrame {
+public class CaculatorPanel extends JFrame {
     //NAME APP
     private final String nameApp = "Máy tính";
 
@@ -50,7 +50,7 @@ public class SettingPanel extends JFrame {
     private Dimension sizeShowScreen;
     private Dimension sizeKeyOption;
 
-    public SettingPanel() {
+    public CaculatorPanel() {
         this.setName(nameApp);
 
         declare();

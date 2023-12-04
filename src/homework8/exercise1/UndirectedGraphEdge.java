@@ -1,8 +1,8 @@
 package homework8.exercise1;
 
 public class UndirectedGraphEdge<T> {
-    private T source;
-    private T destination;
+    protected T source;
+    protected T destination;
 
     public UndirectedGraphEdge(T source, T destination) {
         this.source = source;

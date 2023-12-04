@@ -1,18 +1,14 @@
 package homework8.exercise1;
 
-public class DirectedGraphEdge<T> {
-    private T source;
-    private T destination;
+public class DirectedGraphEdge<T> extends UndirectedGraphEdge<T> {
     private double height;
 
     public DirectedGraphEdge(T source, T destination) {
-        this.source = source;
-        this.destination = destination;
+        super(source, destination);
     }
 
     public DirectedGraphEdge(T source, T destination, double height) {
-        this.source = source;
-        this.destination = destination;
+        super(source, destination);
         this.height = height;
     }
 
@@ -30,6 +26,6 @@ public class DirectedGraphEdge<T> {
 
     @Override
     public String toString() {
-        return "(" + source + ", " + destination + ", " + height + ")";
+        return "(" + source + " -> " + destination + ", " + height + ")";
     }
 }
