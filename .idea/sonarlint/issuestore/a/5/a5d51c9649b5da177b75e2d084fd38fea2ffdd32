@@ -1,0 +1,5 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘…³éûÿÿÿÿ8ôËÉÕ¾1
+w	java:S116"VRename this field "DEFAULTSIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃéÀ”øÿÿÿÿ8‚ÌÉÕ¾1
+C
+java:S1170"!Make this final field static too.(ÃéÀ”øÿÿÿÿ8‚ÌÉÕ¾1

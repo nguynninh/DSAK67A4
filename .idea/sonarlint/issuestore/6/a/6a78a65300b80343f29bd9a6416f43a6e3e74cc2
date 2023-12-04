@@ -1,0 +1,8 @@
+
+t
+java:S1104"RMake pointB a static final constant or non-public and provide accessors if needed.(Ñ°èÍùÿÿÿÿ8°ôÃÑ¿1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(îé»¶8±ôÃÑ¿1
+c
+java:S1126"AReplace this if-then-else statement by a single return statement.(ÎçŞÿÿÿÿÿ8µôÃÑ¿1
+c
+java:S1126-"AReplace this if-then-else statement by a single return statement.(½„ş“ÿÿÿÿÿ8·ôÃÑ¿1

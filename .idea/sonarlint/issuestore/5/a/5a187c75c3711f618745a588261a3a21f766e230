@@ -1,0 +1,10 @@
+
+Z
+java:S4977"=Rename "K" which hides a type parameter from the outer scope.(Ù‰‘Ñ8ÊóÒÇ½1
+Z
+java:S4977"=Rename "E" which hides a type parameter from the outer scope.(Ù‰‘Ñ8ÊóÒÇ½1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¹‚ã ûÿÿÿÿ8ËóÒÇ½1
+>
+java:S1170#"!Make this final field static too.(¿­¼8àóÒÇ½1
+O
+java:S1905&"-Remove this unnecessary cast to "ArrEntry[]".(¥€÷Ëşÿÿÿÿ8äóÒÇ½1

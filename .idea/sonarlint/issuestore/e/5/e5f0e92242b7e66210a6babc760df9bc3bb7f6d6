@@ -1,0 +1,11 @@
+
+i
+java:S1192"MDefine a constant instead of duplicating this literal " nanoseconds" 3 times.(Øâ­I8¶’Á’À1
+“
+java:S1319O"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(Æ¬Íÿÿÿÿÿ8·’Á’À1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šÑÅ8¸’Á’À1
+m
+java:S3252"KUse static access with "homework5.exercise1.b.LinkedBinaryTree" for "Node".(â‡ïïøÿÿÿÿ8³›Ğ’À1
+F	java:S106"+Replace this use of System.out by a logger.(Øâ­I8È’Á’À1
+G	java:S106"+Replace this use of System.out by a logger.(´”Î8È’Á’À1
+L	java:S106"+Replace this use of System.out by a logger.(üêİøüÿÿÿÿ8È’Á’À1

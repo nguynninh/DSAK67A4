@@ -1,0 +1,15 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ô‘˜¤şÿÿÿÿ8šàƒĞ¿1
+G
+java:S1197"*Move the array designators [] to the type.(ë¥Ï§8ÎàƒĞ¿1
+[
+java:S1155)">Use isEmpty() to check whether the collection is empty or not.(‘ŠäÖ8ÏàƒĞ¿1
+L	java:S106V"+Replace this use of System.out by a logger.(‹¯šùÿÿÿÿ8ÕàƒĞ¿1
+A
+java:S2440d"$Remove this instantiation of "Tree".(ıÃÅü8ÚàƒĞ¿1
+W
+java:S2209e"5Change this instance-reference to a static reference.(´Í³Õüÿÿÿÿ8ÛàƒĞ¿1
+G	java:S106g"+Replace this use of System.out by a logger.(É»ß”8ÛàƒĞ¿1
+G	java:S106i"+Replace this use of System.out by a logger.(ô¤„å8ÜàƒĞ¿1
+V
+java:S1118t":Add a private constructor to hide the implicit public one.(Ç¼É,8ÜàƒĞ¿1

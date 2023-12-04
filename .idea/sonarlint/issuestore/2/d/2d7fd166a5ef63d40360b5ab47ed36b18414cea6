@@ -1,0 +1,24 @@
+
+
+java:S1186
+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷—8ÎÉìşÀ1
+£
+java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜Â½€øÿÿÿÿ8ÿƒïşÀ1
+j
+java:S1659"HDeclare "downPressed" and all following declarations on a separate line.(¿Åî‹úÿÿÿÿ8ÑÉìşÀ1
+|
+java:S1450"ZRemove the "downPressed" field and declare it as a local variable in the relevant methods.(¿Åî‹úÿÿÿÿ8ÑÉìşÀ1
+|
+java:S1450"ZRemove the "leftPressed" field and declare it as a local variable in the relevant methods.(¿Åî‹úÿÿÿÿ8ÒÉìşÀ1
+}
+java:S1450"[Remove the "rightPressed" field and declare it as a local variable in the relevant methods.(¿Åî‹úÿÿÿÿ8ÒÉìşÀ1
+z
+java:S1450"XRemove the "upPressed" field and declare it as a local variable in the relevant methods.(¿Åî‹úÿÿÿÿ8ÒÉìşÀ1
+O
+java:S1068"-Remove this unused "upPressed" private field.(¿Åî‹úÿÿÿÿ8ÜÉìşÀ1
+Q
+java:S1068"/Remove this unused "downPressed" private field.(¿Åî‹úÿÿÿÿ8ÜÉìşÀ1
+Q
+java:S1068"/Remove this unused "leftPressed" private field.(¿Åî‹úÿÿÿÿ8ÜÉìşÀ1
+R
+java:S1068"0Remove this unused "rightPressed" private field.(¿Åî‹úÿÿÿÿ8ÜÉìşÀ1

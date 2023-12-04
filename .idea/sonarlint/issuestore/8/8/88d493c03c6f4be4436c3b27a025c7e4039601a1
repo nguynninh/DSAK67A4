@@ -1,0 +1,18 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôïÉÉ
+g
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(É’†æ
+@	java:S106"+Replace this use of System.out by a logger.(É’†æ
+l
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(Ñçƒöùÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(Ñçƒöùÿÿÿÿ
+g
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(½§¥Î
+@	java:S106"+Replace this use of System.out by a logger.(½§¥Î
+g
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(¥Ş«
+@	java:S106"+Replace this use of System.out by a logger.(¥Ş«
+S
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8êŸ”ô¿1
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8êŸ”ô¿1

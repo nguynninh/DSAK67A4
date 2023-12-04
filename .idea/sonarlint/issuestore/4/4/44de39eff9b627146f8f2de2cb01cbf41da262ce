@@ -1,0 +1,18 @@
+
+_
+java:S4977	"=Rename "K" which hides a type parameter from the outer scope.(™ã¡ƒúÿÿÿÿ8“¿°È½1
+_
+java:S4977	"=Rename "E" which hides a type parameter from the outer scope.(™ã¡ƒúÿÿÿÿ8“¿°È½1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úØß—8—¿°È½1
+Y
+java:S2387#"<"size" is the name of a field in "SortedArrayPriorityQueue".(ŠÝýÞ8Ç¿°È½1
+e
+java:S2387$"C"defaultSize" is the name of a field in "SortedArrayPriorityQueue".(Øæ¾êûÿÿÿÿ8È¿°È½1
+C
+java:S1170$"!Make this final field static too.(Øæ¾êûÿÿÿÿ8È¿°È½1
+L
+java:S1197""*Move the array designators [] to the type.(Œ‘Þ€ýÿÿÿÿ8Ï¿°È½1
+G
+java:S1197+"*Move the array designators [] to the type.(ÙÐÀú8Ñ¿°È½1
+G
+java:S11977"*Move the array designators [] to the type.(ÙÐÀú8Ó¿°È½1

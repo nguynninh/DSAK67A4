@@ -1,0 +1,12 @@
+
+K
+java:S3740("/Provide the parametrized type for this generic.(¿Åƒk8¸èÖÇ½1
+L
+java:S3740†"/Provide the parametrized type for this generic.(¿Åƒk8¸èÖÇ½1
+Y
+java:S4977"=Rename "K" which hides a type parameter from the outer scope.(–âˆD8¹èÖÇ½1
+Y
+java:S4977"=Rename "E" which hides a type parameter from the outer scope.(–âˆD8¹èÖÇ½1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¹‚ã ûÿÿÿÿ8ºèÖÇ½1
+g
+java:S2259i"EA "NullPointerException" could be thrown; "minCurr" is nullable here.(¨ï¾¸ûÿÿÿÿ8ÓèÖÇ½1
