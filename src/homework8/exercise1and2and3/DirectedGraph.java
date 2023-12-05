@@ -1,9 +1,9 @@
-package homework8.exercise1;
+package homework8.exercise1and2and3;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DirectedGraph<T> implements GraphADT<T, Integer> {
+public class DirectedGraph<T> implements GraphADT<T, DirectedGraphEdge<T>> {
     private int[][] adjacencyMatrix;
     private List<T> vertices;
 
@@ -36,14 +36,14 @@ public class DirectedGraph<T> implements GraphADT<T, Integer> {
     }
 
     @Override
-    public Iterable<UndirectedGraphEdge<T>> edges() {
-        List<UndirectedGraphEdge<T>> edgesList = new ArrayList<>();
+    public Iterable<DirectedGraphEdge<T>> edges() {
+        List<DirectedGraphEdge<T>> edgesList = new ArrayList<>();
         for (int i = 0; i < numVertices(); i++) {
             for (int j = 0; j < numVertices(); j++) {
                 if (adjacencyMatrix[i][j] != 0) {
                     T u = vertices.get(i);
                     T v = vertices.get(j);
-                    edgesList.add(new UndirectedGraphEdge<>(u, v));
+                    edgesList.add(new DirectedGraphEdge<>(u, v, adjacencyMatrix[i][j]));
                 }
             }
         }
@@ -51,11 +51,11 @@ public class DirectedGraph<T> implements GraphADT<T, Integer> {
     }
 
     @Override
-    public UndirectedGraphEdge<T> getEdge(T u, T v) {
+    public DirectedGraphEdge<T> getEdge(T u, T v) {
         int indexU = vertices.indexOf(u);
         int indexV = vertices.indexOf(v);
         if (indexU != -1 && indexV != -1 && adjacencyMatrix[indexU][indexV] != 0) {
-            return new UndirectedGraphEdge<>(u, v);
+            return new DirectedGraphEdge<>(u, v, adjacencyMatrix[indexU][indexV]);
         }
         return null;
     }
@@ -88,15 +88,15 @@ public class DirectedGraph<T> implements GraphADT<T, Integer> {
 
 
     @Override
-    public Iterable<UndirectedGraphEdge<T>> outgoingEdges(T v) {
+    public Iterable<DirectedGraphEdge<T>> outgoingEdges(T v) {
         int indexV = vertices.indexOf(v);
         if (indexV != -1) {
-            List<UndirectedGraphEdge<T>> edgesList = new ArrayList<>();
+            List<DirectedGraphEdge<T>> edgesList = new ArrayList<>();
             for (int i = 0; i < numVertices(); i++) {
                 if (adjacencyMatrix[indexV][i] != 0) {
                     T u = vertices.get(indexV);
                     T dest = vertices.get(i);
-                    edgesList.add(new UndirectedGraphEdge<>(u, dest));
+                    edgesList.add(new DirectedGraphEdge<>(u, dest,adjacencyMatrix[indexV][i]));
                 }
             }
             return edgesList;
@@ -105,15 +105,15 @@ public class DirectedGraph<T> implements GraphADT<T, Integer> {
     }
 
     @Override
-    public Iterable<UndirectedGraphEdge<T>> incomingEdges(T v) {
+    public Iterable<DirectedGraphEdge<T>> incomingEdges(T v) {
         int indexV = vertices.indexOf(v);
         if (indexV != -1) {
-            List<UndirectedGraphEdge<T>> edgesList = new ArrayList<>();
+            List<DirectedGraphEdge<T>> edgesList = new ArrayList<>();
             for (int i = 0; i < numVertices(); i++) {
                 if (adjacencyMatrix[i][indexV] != 0) {
                     T src = vertices.get(i);
                     T dest = vertices.get(indexV);
-                    edgesList.add(new UndirectedGraphEdge<>(src, dest));
+                    edgesList.add(new DirectedGraphEdge<>(src, dest,adjacencyMatrix[i][indexV]));
                 }
             }
             return edgesList;
@@ -152,7 +152,7 @@ public class DirectedGraph<T> implements GraphADT<T, Integer> {
 
 
     @Override
-    public void removeEdge(UndirectedGraphEdge<T> edge) {
+    public void removeEdge(DirectedGraphEdge<T> edge) {
         T u = edge.getSource();
         T v = edge.getDestination();
         int indexU = vertices.indexOf(u);

@@ -1,4 +1,4 @@
-package homework8.exercise1;
+package project;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package homework8.exercise1;
+package homework8.exercise1and2and3;
 
 public class TestDirectedGraph {
     public static void main(String[] args) {

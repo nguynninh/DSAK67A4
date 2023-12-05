@@ -1,10 +1,9 @@
-package homework8.exercise1;
+package homework8.exercise1and2and3;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class UndirectedGraph<T> implements GraphADT<T, Void> {
+public class UndirectedGraph<T> implements GraphADT<T, UndirectedGraphEdge<T>> {
     private int[][] adjacencyMatrix;
     private List<T> vertices;
 
@@ -34,7 +33,7 @@ public class UndirectedGraph<T> implements GraphADT<T, Void> {
         return vertices;
     }
 
-    @Override
+        @Override
     public Iterable<UndirectedGraphEdge<T>> edges() {
         List<UndirectedGraphEdge<T>> edgesList = new ArrayList<>();
         for (int i = 0; i < numVertices(); i++) {
