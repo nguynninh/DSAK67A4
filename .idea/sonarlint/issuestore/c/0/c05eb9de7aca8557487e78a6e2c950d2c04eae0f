@@ -1,0 +1,108 @@
+
+†
+java:S1319."kThe type of "listlength" should be an interface such as "List" rather than the implementation "LinkedList".(°Ô¾úüÿÿÿÿ
+
+java:S1319f"kThe type of "listLength" should be an interface such as "List" rather than the implementation "LinkedList".(ÃÀôô
+_
+java:S2184@"DCast one of the operands of this subtraction operation to a "float".(ó‚Ò±ÿÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Öƒ·º
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¨Á‹Îıÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÅÔÒØıÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ô›
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Éÿ¶¬
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ç‡ëıüÿÿÿÿ
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„ø²˜
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ã£õ¾
+o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(§—ó
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ıû¨¤şÿÿÿÿ
+t	java:S115 "ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(³ÄÏğùÿÿÿÿ
+t	java:S115!"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÅšÀëÿÿÿÿÿ
+V	java:S107."<Method has 8 parameters, which is greater than 7 authorized.(°Ô¾úüÿÿÿÿ
+Q	java:S107P"<Method has 9 parameters, which is greater than 7 authorized.(ßç·ï
+R	java:S107f"=Method has 10 parameters, which is greater than 7 authorized.(ÃÀôô
+W	java:S107¥"<Method has 8 parameters, which is greater than 7 authorized.(œşÿúÿÿÿÿÿ
+X	java:S107Í"=Method has 11 parameters, which is greater than 7 authorized.(šÑ§úÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(³Ş°áüÿÿÿÿ
+F
+java:S1172f"0Remove this unused method parameter "eyeclosed".(ÃÀôô
+A
+java:S1905u"&Remove this unnecessary cast to "int".(¬£áÀüÿÿÿÿ
+A
+java:S1905u"&Remove this unnecessary cast to "int".(¬£áÀüÿÿÿÿ
+A
+java:S1905u"&Remove this unnecessary cast to "int".(¬£áÀüÿÿÿÿ
+A
+java:S1905u"&Remove this unnecessary cast to "int".(¬£áÀüÿÿÿÿ
+B
+java:S1905–"&Remove this unnecessary cast to "int".(åÚÄÈùÿÿÿÿ
+B
+java:S1905–"&Remove this unnecessary cast to "int".(åÚÄÈùÿÿÿÿ
+=
+java:S1905—"&Remove this unnecessary cast to "int".(ÿÓµ
+=
+java:S1905—"&Remove this unnecessary cast to "int".(ÿÓµ
+=
+java:S1905¨"&Remove this unnecessary cast to "int".(ˆ™•«
+=
+java:S1905¨"&Remove this unnecessary cast to "int".(ˆ™•«
+B
+java:S1905©"&Remove this unnecessary cast to "int".(©¼®Ïÿÿÿÿÿ
+B
+java:S1905©"&Remove this unnecessary cast to "int".(©¼®Ïÿÿÿÿÿ
+=
+java:S1905«"&Remove this unnecessary cast to "int".(Ä¯ƒ€
+=
+java:S1905«"&Remove this unnecessary cast to "int".(Ä¯ƒ€
+B
+java:S1905¬"&Remove this unnecessary cast to "int".(ÛÈØ“ÿÿÿÿÿ
+B
+java:S1905¬"&Remove this unnecessary cast to "int".(ÛÈØ“ÿÿÿÿÿ
+=
+java:S1905®"&Remove this unnecessary cast to "int".(ãû‘­
+=
+java:S1905®"&Remove this unnecessary cast to "int".(ãû‘­
+B
+java:S1905¯"&Remove this unnecessary cast to "int".(®·ã˜øÿÿÿÿ
+B
+java:S1905¯"&Remove this unnecessary cast to "int".(®·ã˜øÿÿÿÿ
+=
+java:S1905´"&Remove this unnecessary cast to "int".(…¿Ûô
+=
+java:S1905´"&Remove this unnecessary cast to "int".(…¿Ûô
+=
+java:S1905´"&Remove this unnecessary cast to "int".(…¿Ûô
+=
+java:S1905´"&Remove this unnecessary cast to "int".(…¿Ûô
+=
+java:S1905µ"&Remove this unnecessary cast to "int".(Îâœ
+=
+java:S1905µ"&Remove this unnecessary cast to "int".(Îâœ
+=
+java:S1905µ"&Remove this unnecessary cast to "int".(Îâœ
+=
+java:S1905µ"&Remove this unnecessary cast to "int".(Îâœ
+=
+java:S1905¶"&Remove this unnecessary cast to "int".(›È¨Ğ
+=
+java:S1905¶"&Remove this unnecessary cast to "int".(›È¨Ğ
+=
+java:S1905¶"&Remove this unnecessary cast to "int".(›È¨Ğ
+=
+java:S1905¶"&Remove this unnecessary cast to "int".(›È¨Ğ
+B
+java:S1905·"&Remove this unnecessary cast to "int".(ş¹Èíüÿÿÿÿ
+B
+java:S1905·"&Remove this unnecessary cast to "int".(ş¹Èíüÿÿÿÿ
+B
+java:S1905·"&Remove this unnecessary cast to "int".(ş¹Èíüÿÿÿÿ
+B
+java:S1905·"&Remove this unnecessary cast to "int".(ş¹Èíüÿÿÿÿ
+B
+java:S1905º"&Remove this unnecessary cast to "int".(ğ»Èæúÿÿÿÿ
+B
+java:S1905º"&Remove this unnecessary cast to "int".(ğ»Èæúÿÿÿÿ
+=
+java:S1905»"&Remove this unnecessary cast to "int".(óÁ¤Ş
+=
+java:S1905»"&Remove this unnecessary cast to "int".(óÁ¤Ş
