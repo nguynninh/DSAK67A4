@@ -1,0 +1,31 @@
+
+f	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯‰·ç
+l
+java:S1104"QMake timer a static final constant or non-public and provide accessors if needed.(¶çøıÿÿÿÿ
+q
+java:S1104"VMake imgTerrain a static final constant or non-public and provide accessors if needed.(ÕÆÛıÿÿÿÿ
+x
+java:S1104"]Make direction_shaking a static final constant or non-public and provide accessors if needed.(Ö¤¡áüÿÿÿÿ
+t
+java:S1104"^Make decalage_shaking_x a static final constant or non-public and provide accessors if needed.(ÓçÔ
+y
+java:S1104"^Make decalage_shaking_y a static final constant or non-public and provide accessors if needed.(¬éëøÿÿÿÿ
+F
+java:S1444"+Make this "public static timer" field final(¶çøıÿÿÿÿ
+K
+java:S1444"0Make this "public static imgTerrain" field final(ÕÆÛıÿÿÿÿ
+R
+java:S1444"7Make this "public static direction_shaking" field final(Ö¤¡áüÿÿÿÿ
+N
+java:S1444"8Make this "public static decalage_shaking_x" field final(ÓçÔ
+S
+java:S1444"8Make this "public static decalage_shaking_y" field final(¬éëøÿÿÿÿ
+w
+java:S3008"\Rename this field "direction_shaking" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ö¤¡áüÿÿÿÿ
+s
+java:S3008"]Rename this field "decalage_shaking_x" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÓçÔ
+x
+java:S3008"]Rename this field "decalage_shaking_y" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬éëøÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ó½Ë˜
+h	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ßÅ‡şÿÿÿÿ

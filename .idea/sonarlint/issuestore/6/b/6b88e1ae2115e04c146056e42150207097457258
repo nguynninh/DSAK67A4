@@ -1,0 +1,43 @@
+
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤§úÿÿÿÿ
+k	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕàÉÜûÿÿÿÿ
+k	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕàÉÜûÿÿÿÿ
+k	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕàÉÜûÿÿÿÿ
+f	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨’œ¥
+f	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨’œ¥
+b
+java:S1301Æ"KReplace this "switch" statement by "if" statements to increase readability.(Ûš¢Š
+1
+java:S1700"Rename field "display"(€Şõªøÿÿÿÿ
+\
+java:S2184»"@Cast one of the operands of this integer division to a "double".(Æ³¬ÿÿÿÿÿ
+W
+java:S2184¼"@Cast one of the operands of this integer division to a "double".(Èå“é
+W
+java:S2184É"@Cast one of the operands of this integer division to a "double".(¾ïéÚ
+5
+java:S1659&"Declare "y" on a separate line.(ùç—©
+5
+java:S1659'"Declare "h" on a separate line.(Í¤¾‡
+[	java:S1075"AConstructor has 8 parameters, which is greater than 7 authorized.(¿¤§úÿÿÿÿ
+i
+java:S3776—"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ã¬¬•
+F
+java:S1611¨"/Remove the parentheses around the "g" parameter(åš³º
+F
+java:S1611¬"/Remove the parentheses around the "g" parameter(»¨ŠÕ
+F
+java:S1611Â"/Remove the parentheses around the "g" parameter(åš³º
+8	java:S131Æ""Add a default case to this switch.(Ûš¢Š
+`
+java:S3358Ê"DExtract this nested ternary operation into an independent statement.(òø¦Ôùÿÿÿÿ
+F
+java:S1611Ù"/Remove the parentheses around the "g" parameter(™³Úô
+C
+java:S1602Ù",Remove useless curly braces around statement(™³Úô
