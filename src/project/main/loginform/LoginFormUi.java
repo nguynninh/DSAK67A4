@@ -2,30 +2,39 @@ package project.main.loginform;
 
 import org.mindrot.bcrypt.BCrypt;
 import project.main.SettingPanel;
+import project.main.forgotpass.ForgotPasswordUI;
+import project.main.register.RegisterFormUI;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LoginFormUi extends JPanel {
     private int sizeWidth = SettingPanel.screenWith + 150;
     private int sizeHeight = SettingPanel.screenHeight;
-    private final Font fontTitle = new Font("Aria", Font.BOLD, 20);
 
     // Thong tin
     private JTextField textFieldUsername;
     private JPasswordField passwordField;
     private JCheckBox checkBoxRemember;
     private JButton buttonLogin;
+    private JLabel lblQuenPass;
+    private JLabel lblCreateAcc;
     private boolean isShowPassword = true;
+    private final boolean[] isCheck = new boolean[2];
 
     public LoginFormUi() {
         setLayout(new GridLayout(1, 2));
         setPreferredSize(new Dimension(sizeWidth, sizeHeight));
         setBorder(BorderFactory.createEmptyBorder(60, 50, 60, 50));
         setBackground(Color.GRAY);
+
 
         initComponents();
 
@@ -105,13 +114,14 @@ public class LoginFormUi extends JPanel {
         checkBoxRemember = new JCheckBox("Lưu lại lịch sửa đăng nhập");
         jPanel4T.add(checkBoxRemember, BorderLayout.WEST);
 
-        JLabel lblQuenPass = new JLabel("Quên mật khẩu?");
+        lblQuenPass = new JLabel("Quên mật khẩu?");
         lblQuenPass.setForeground(Color.BLUE);
         jPanel4T.add(lblQuenPass, BorderLayout.EAST);
 
         JPanel jPanel4S = new JPanel(new FlowLayout());
         buttonLogin = new JButton("Đăng nhập");
         buttonLogin.setPreferredSize(new Dimension(200, 40));
+        buttonLogin.setEnabled(false);
         jPanel4S.add(buttonLogin);
         jPanel4.add(jPanel4T, BorderLayout.NORTH);
         jPanel4.add(jPanel4S, BorderLayout.SOUTH);
@@ -125,7 +135,7 @@ public class LoginFormUi extends JPanel {
 
         JPanel jPanel5S = new JPanel(new FlowLayout());
         JLabel lblCA = new JLabel("Bạn chưa có tài khoản?");
-        JLabel lblCreateAcc = new JLabel("Tạo tài khoản");
+        lblCreateAcc = new JLabel("Tạo tài khoản");
         lblCreateAcc.setForeground(Color.BLUE);
         jPanel5S.add(lblCA);
         jPanel5S.add(lblCreateAcc);
@@ -151,6 +161,40 @@ public class LoginFormUi extends JPanel {
     }
 
     private void actionListener() {
+        textFieldUsername.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                extractedUsername();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                extractedUsername();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+        });
+
+        passwordField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                extractedPassword();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                extractedPassword();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+        });
+
         buttonLogin.addActionListener(i -> {
             String username = textFieldUsername.getText();
             String password = String.valueOf(passwordField.getPassword());
@@ -158,8 +202,89 @@ public class LoginFormUi extends JPanel {
 
             System.out.println("Username: " + username);
             System.out.println("Password: " + BCrypt.hashpw(password, BCrypt.gensalt(12)));
-            System.out.println("Save Account: "+ saveAccount);
+            System.out.println("Save Account: " + saveAccount);
         });
+
+        lblQuenPass.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                ForgotPasswordUI forgotPassPanel = new ForgotPasswordUI();
+
+                // Hiển thị JPanel QuenPass
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblQuenPass);
+                frame.getContentPane().removeAll();
+                frame.getContentPane().add(forgotPassPanel);
+                frame.pack();
+                frame.repaint();
+            }
+        });
+
+        lblCreateAcc.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                RegisterFormUI registerFormUI = new RegisterFormUI();
+
+                // Hiển thị JPanel QuenPass
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblQuenPass);
+                frame.getContentPane().removeAll();
+                frame.getContentPane().add(registerFormUI);
+                frame.pack();
+                frame.repaint();
+            }
+        });
+    }
+
+    private void extractedUsername() {
+        String text = textFieldUsername.getText();
+        if (isValidEmail(text) || isValidPhoneNumber(text)) {
+            textFieldUsername.setBackground(null);
+            isCheck[0] = true;
+        } else {
+            textFieldUsername.setBackground(new Color(227, 114, 114));
+            isCheck[0] = false;
+        }
+
+        for (boolean is : isCheck)
+            if (!is){
+                buttonLogin.setEnabled(false);
+                return;
+            }
+        buttonLogin.setEnabled(true);
+    }
+
+    private void extractedPassword() {
+        if (passwordField.getPassword().length < 1) {
+            passwordField.setBackground(new Color(227, 114, 114));
+            isCheck[1] = false;
+        } else {
+            passwordField.setBackground(null);
+            isCheck[1] = true;
+        }
+
+        for (boolean is : isCheck)
+            if (!is){
+                buttonLogin.setEnabled(false);
+                return;
+            }
+        buttonLogin.setEnabled(true);
+    }
+
+    private static boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    private static boolean isValidPhoneNumber(String phoneNumber) {
+        String digitsOnly = phoneNumber.replaceAll("[^0-9]", "");
+
+        if (digitsOnly.length() == 9 || digitsOnly.length() == 10) {
+            if (digitsOnly.length() == 10 && digitsOnly.startsWith("0"))
+                digitsOnly = digitsOnly.substring(1);
+            return true;
+        } else
+            return false;
     }
 
     public static void main(String[] args) {
