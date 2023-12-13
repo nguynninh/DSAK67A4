@@ -1,0 +1,11 @@
+
+]
+java:S3973'"GUse indentation to denote the code conditionally executed by this "if".(åÊÚº
+_
+java:S3824'"IReplace this "Map.containsKey()" with a call to "Map.computeIfPresent()".(åÊÚº
+
+java:S1186I"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷—8ÌúõÉÅ1
+S
+java:S2696:"6Make the enclosing method "static" or remove this set.(äîú¦8ÀÔ’Æ1
+X
+java:S2696;"6Make the enclosing method "static" or remove this set.(í¸úÿÿÿÿ8ÀÔ’Æ1

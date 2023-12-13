@@ -3,7 +3,8 @@ package project.main;
 import homework4.exercise3.controllers.CaculatorPanel;
 import project.main.games.game2048.game.Game;
 import project.main.games.game2048.ui.GamePanel;
-import project.main.games.gamesnake.SnakeGame;
+import project.main.games.snake.view.Window;
+import project.main.games.sudoku.ui.SudokuUI;
 import project.main.games.tictactoe.TicTacToe;
 
 import javax.imageio.ImageIO;
@@ -12,13 +13,17 @@ import java.awt.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SettingPanel extends JPanel implements Runnable {
+    //Map for app
+    Map<String, Object> searchingApp = new HashMap<>();
     //PRIVATE SETTING
     private final String nameStore = "Cửa hàng trò chơi";
     private final String imageStore = "icon/logo.png";
-    private final int screenWith = 700;
-    private final int screenHeight = 600;
+    public static final int screenWith = 700;
+    public static final int screenHeight = 600;
 
     //THREAD
     private final Thread storeThread;
@@ -241,21 +246,12 @@ public class SettingPanel extends JPanel implements Runnable {
             });
 
             // Rắn ăn mồi
-            Object[] gameSnake = createBannerGame("Rắn ăn mồi", "gamesnake/logo.png");
+            Object[] gameSnake = createBannerGame("Rắn ăn mồi", "snake/logo.png");
             gamePanelBody.add((Component) gameSnake[0]);
             ((JButton) gameSnake[2]).addActionListener(i->{
                     System.out.println("Đang khởi động " + "Rắn ăn mồi" + " ....");
                     Thread thread = new Thread(() -> {
-                        JFrame jFrame = new JFrame("Snake Game");
-                        jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-                        SnakeGame snakeGame = new SnakeGame();
-                        jFrame.add(snakeGame);
-                        jFrame.pack();
-
-                        jFrame.setResizable(false);
-                        jFrame.setLocationRelativeTo(null);
-                        jFrame.setVisible(true);
+                        new Window();
                     });
 
                     thread.start();
@@ -270,7 +266,16 @@ public class SettingPanel extends JPanel implements Runnable {
                     thread.start();
             });
 
-            for (int i = 0; i < 2; i++) {
+            // Sukudo
+            Object[] gameSukudo = createBannerGame("Sudoku", "sudoku/logo.png");
+            gamePanelBody.add((Component) gameSukudo[0]);
+            ((JButton) gameSukudo[2]).addActionListener(i->{
+                    System.out.println("Đang khởi động " + "Sudoku" + " ....");
+                    Thread thread = new Thread(() -> new SudokuUI());
+                    thread.start();
+            });
+
+            for (int i = 0; i < 1; i++) {
                 JPanel panel = new JPanel();
                 panel.setLayout(new BorderLayout());
                 panel.setPreferredSize(new Dimension(150, 190));
@@ -383,4 +388,5 @@ public class SettingPanel extends JPanel implements Runnable {
 
         return new Object[]{panelGame, btnImg, playGame};
     }
+
 }

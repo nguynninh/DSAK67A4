@@ -1,0 +1,18 @@
+
+o
+java:S1104""MMake f a static final constant or non-public and provide accessors if needed.(ŒÙ–™şÿÿÿÿ8½¼âÊÅ1
+m
+java:S1104_"QMake value a static final constant or non-public and provide accessors if needed.(Ó­ä}8½¼âÊÅ1
+s
+java:S1104n"QMake value a static final constant or non-public and provide accessors if needed.(çÜÖÿÿÿÿÿ8½¼âÊÅ1
+s
+java:S1104x"QMake value a static final constant or non-public and provide accessors if needed.(Á¨×¶ùÿÿÿÿ8½¼âÊÅ1
+I
+java:S1444""'Make this "public static f" field final(ŒÙ–™şÿÿÿÿ8½¼âÊÅ1
+?
+java:S3066_"#Lower the visibility of this field.(Ó­ä}8Ç¼âÊÅ1
+E
+java:S3066n"#Lower the visibility of this field.(çÜÖÿÿÿÿÿ8É¼âÊÅ1
+E
+java:S3066x"#Lower the visibility of this field.(Á¨×¶ùÿÿÿÿ8É¼âÊÅ1
+E	java:S108}")Either remove or fill this block of code.(”ı¾8Ê¼âÊÅ1

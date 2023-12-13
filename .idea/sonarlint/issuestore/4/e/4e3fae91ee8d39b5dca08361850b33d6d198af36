@@ -1,0 +1,85 @@
+
+n
+java:S1104"SMake numbers a static final constant or non-public and provide accessors if needed.(•òæÛıÿÿÿÿ
+g
+java:S1104"RMake moving a static final constant or non-public and provide accessors if needed.(ñ½»[
+i
+java:S1104"TMake hasMoved a static final constant or non-public and provide accessors if needed.(ñ½»[
+j
+java:S1104"UMake sthMoving a static final constant or non-public and provide accessors if needed.(ñ½»[
+e
+java:S1104"OMake dir a static final constant or non-public and provide accessors if needed.(øĞ
+l
+java:S1104"QMake total a static final constant or non-public and provide accessors if needed.(ã–­¾ÿÿÿÿÿ
+H
+java:S1444"-Make this "public static numbers" field final(•òæÛıÿÿÿÿ
+A
+java:S1444",Make this "public static moving" field final(ñ½»[
+C
+java:S1444".Make this "public static hasMoved" field final(ñ½»[
+D
+java:S1444"/Make this "public static sthMoving" field final(ñ½»[
+?
+java:S1444")Make this "public static dir" field final(øĞ
+F
+java:S1444"+Make this "public static total" field final(ã–­¾ÿÿÿÿÿ
+_
+java:S2184„"HCast one of the operands of this multiplication operation to a "double".(Ÿ™“
+_
+java:S2184„"HCast one of the operands of this multiplication operation to a "double".(Ÿ™“
+W
+java:S2184™"@Cast one of the operands of this integer division to a "double".(à‘ğ
+W
+java:S2184™"@Cast one of the operands of this integer division to a "double".(à‘ğ
+R
+java:S2589_"7Remove this expression which always evaluates to "true"(ê¸ğ´ùÿÿÿÿ
+Z
+java:S1659"EDeclare "hasMoved" and all following declarations on a separate line.(ñ½»[
+8
+java:S2386 ""Make member "numbers" "protected".(Œ¸‹Ì
+L
+java:S2696 "6Make the enclosing method "static" or remove this set.(Œ¸‹Ì
+Q
+java:S2696!"6Make the enclosing method "static" or remove this set.(ó°ç‰ıÿÿÿÿ
+L
+java:S2696""6Make the enclosing method "static" or remove this set.(ª±ı–
+L
+java:S2696#"6Make the enclosing method "static" or remove this set.(•¦ú
+Q
+java:S2696>"6Make the enclosing method "static" or remove this set.(›©Ïªúÿÿÿÿ
+?
+java:S5413F")Verify that "remove()" is used correctly.(üš»
+L
+java:S2696L"6Make the enclosing method "static" or remove this set.(•¦ú
+Q
+java:S2696O"6Make the enclosing method "static" or remove this set.(Ä©°Ÿüÿÿÿÿ
+Q
+java:S2696T"6Make the enclosing method "static" or remove this set.(ó°ç‰ıÿÿÿÿ
+L
+java:S2696\"6Make the enclosing method "static" or remove this set.(îÔ½
+L
+java:S2696a"6Make the enclosing method "static" or remove this set.(ª±ı–
+L
+java:S2696b"6Make the enclosing method "static" or remove this set.(ÁÍáÏ
+L
+java:S2696c"6Make the enclosing method "static" or remove this set.(õŠœ–
+L
+java:S2696e"6Make the enclosing method "static" or remove this set.(ª±ı–
+L
+java:S2696f"6Make the enclosing method "static" or remove this set.(ÁÍáÏ
+Q
+java:S2696g"6Make the enclosing method "static" or remove this set.(¹º‰›ûÿÿÿÿ
+L
+java:S2696i"6Make the enclosing method "static" or remove this set.(ª±ı–
+L
+java:S2696j"6Make the enclosing method "static" or remove this set.(ÁÍáÏ
+Q
+java:S2696k"6Make the enclosing method "static" or remove this set.(ö¡å†úÿÿÿÿ
+L
+java:S2696m"6Make the enclosing method "static" or remove this set.(ª±ı–
+L
+java:S2696n"6Make the enclosing method "static" or remove this set.(ÁÍáÏ
+L
+java:S2696o"6Make the enclosing method "static" or remove this set.(çÔô
+5
+java:S1659w"Declare "y" on a separate line.(äÛÁ”

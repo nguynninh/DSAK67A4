@@ -1,0 +1,36 @@
+
+_
+java:S6208¾"CMerge the previous cases into this one using comma-separated label.(Ìßßøÿÿÿÿ
+_
+java:S6208Ä"CMerge the previous cases into this one using comma-separated label.(ÿìÙşÿÿÿÿ
+
+java:S1319ç"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(œÃğ“8Şù ËÅ1
+k	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó¬á•ûÿÿÿÿ
+k	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó¬á•ûÿÿÿÿ
+g	java:S117¦"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¨Ö¡
+g	java:S117¦"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¨Ö¡
+1
+java:S1700Ÿ"Rename field "length"(”Ú´ıÿÿÿÿ
+t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÒÓºğşÿÿÿÿ
+n	java:S116"YRename this field "FirstPositionX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê†û
+s	java:S116"YRename this field "FirstPositionY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ê¿ïşÿÿÿÿ
+i	java:S116+"TRename this field "timer_end" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§…Íæ
+l
+java:S1845+"VRename field "timer_end" to prevent any misunderstanding/clash with field "TIMER_END".(§…Íæ
+M
+java:S11359"2Complete the task associated to this TODO comment.(ƒŠ® úÿÿÿÿ
+=
+java:S1125^"'Remove the unnecessary boolean literal.( ¡Ê
+B
+java:S1125b"'Remove the unnecessary boolean literal.(´ô£üÿÿÿÿ
+=
+java:S1125~"'Remove the unnecessary boolean literal.( ¡Ê
+j	java:S100µ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šã©n8¾ú ËÅ1
+P
+java:S1854“"9Remove this useless assignment to local variable "newpY".(¬ŸàÅ
+P
+java:S1854’"9Remove this useless assignment to local variable "newpX".(¥»°À
+i
+java:S1871³"MThis branch's code block is the same as the block for the branch on line 303.(¡–åÇûÿÿÿÿ
+T
+java:S2696Å"6Make the enclosing method "static" or remove this set.(ÏÔß¶8Æú ËÅ1

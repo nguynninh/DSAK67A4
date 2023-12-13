@@ -1,0 +1,21 @@
+
+
+java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¤¼›Î8¦±¿’Ä1
+£
+java:S1186+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8§±¿’Ä1
+V
+java:S1854"9Remove this useless assignment to local variable "value".(Â¬“–8ª±¿’Ä1
+L	java:S106"+Replace this use of System.out by a logger.(×¬ÎÜıÿÿÿÿ8«±¿’Ä1
+G
+java:S1481"*Remove this unused "value" local variable.(Â¬“–8¬±¿’Ä1
+L	java:S106 "+Replace this use of System.out by a logger.(Âóüÿÿÿÿ8¬±¿’Ä1
+t
+java:S3776/"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(–ìÙ¼úÿÿÿÿ8®±¿’Ä1
+W
+java:S11171"5Rename "i" which hides the field declared at line 10.(ù«êËıÿÿÿÿ8¯±¿’Ä1
+W
+java:S1117<"5Rename "i" which hides the field declared at line 10.(ù«êËıÿÿÿÿ8°±¿’Ä1
+W
+java:S1117I"5Rename "i" which hides the field declared at line 10.(˜Á£àıÿÿÿÿ8²±¿’Ä1
+R
+java:S1117J"5Rename "j" which hides the field declared at line 11.(ÊöË8²±¿’Ä1

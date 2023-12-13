@@ -1,0 +1,17 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¿Û©
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä¿Û©
+k	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õø¦¡þÿÿÿÿ
+k	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õø¦¡þÿÿÿÿ
+5
+java:S1659"Declare "y" on a separate line.(ùç—©
+6
+java:S1659" Declare "vy" on a separate line.(àõžô
+:
+java:S1659"$Declare "height" on a separate line.(¢«µê
+O
+java:S5993"9Change the visibility of this constructor to "protected".(ä¿Û©
+7
+java:S1116?"Remove this empty statement.(ôŸŽìúÿÿÿÿ
+E
+java:S1172]"*Remove this unused method parameter "arg".(’ô¥ƒûÿÿÿÿ

@@ -1,0 +1,10 @@
+
+h
+java:S1192&"FDefine a constant instead of duplicating this literal "Arial" 5 times.(ı‡ûÿÿÿÿ8³ıı‘Æ1
+H	java:S106Ÿ"+Replace this use of System.out by a logger.(¶ÊÄõ8Æıı‘Æ1
+G	java:S106 "+Replace this use of System.out by a logger.(öÃï38Æıı‘Æ1
+H	java:S106¡"+Replace this use of System.out by a logger.(÷ÄØ¢8Ôãş‘Æ1
+g
+java:S3252¨"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8Çıı‘Æ1
+O
+java:S1068"-Remove this unused "fontTitle" private field.(îõ·Úÿÿÿÿÿ8Çıı‘Æ1

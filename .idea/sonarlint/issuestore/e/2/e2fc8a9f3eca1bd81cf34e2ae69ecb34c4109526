@@ -1,0 +1,56 @@
+
+h	java:S112Ì"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÕªôÅÄ1
+t
+java:S1192î"VDefine a constant instead of duplicating this literal "Äang khá»Ÿi Ä‘á»™ng " 4 times.(­ü´ğ8ÚªôÅÄ1
+c
+java:S1192X"FDefine a constant instead of duplicating this literal "Arial" 5 times.(·Òƒµ8ÚªôÅÄ1
+h
+java:S1192¢"JDefine a constant instead of duplicating this literal "VÃ o ngay" 3 times.(Ù‚â8ÛªôÅÄ1
+d
+java:S1192î"FDefine a constant instead of duplicating this literal " ...." 4 times.(­ü´ğ8ÛªôÅÄ1
+F
+java:S1604×"(Make this anonymous inner class a lambda(ÉãÃ®8ÜªôÅÄ1
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(·–£ˆ8ã‚½ˆÆ1
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(óè€Œıÿÿÿÿ8ä‚½ˆÆ1
+>
+java:S1170"!Make this final field static too.(Œáˆ·8¤«ôÅÄ1
+C
+java:S1170"!Make this final field static too.(•½Ñöşÿÿÿÿ8¦«ôÅÄ1
+{
+java:S1450("^Remove the "btnAchievements" field and declare it as a local variable in the relevant methods.(ÅçØË8°«ôÅÄ1
+u
+java:S1450)"XRemove the "btnAvatar" field and declare it as a local variable in the relevant methods.(œ²±8¼«ôÅÄ1
+x
+java:S1450+"VRemove the "btnHelp" field and declare it as a local variable in the relevant methods.(—¥Æûÿÿÿÿ8 ·“ËÅ1
+s
+java:S1450'"VRemove the "btnMenu" field and declare it as a local variable in the relevant methods.(ûœ€æ8Ç«ôÅÄ1
+z
+java:S1450*"XRemove the "btnOption" field and declare it as a local variable in the relevant methods.(”Â¶çüÿÿÿÿ8Í«ôÅÄ1
+K
+java:S1948".Make "searchingApp" transient or serializable.(Ãá©Â8¥·“ËÅ1
+J
+java:S1948"-Make "storeThread" transient or serializable.(œ…òÌ8¥·“ËÅ1
+y
+java:S3252”"[Use static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_ALWAYS".(££è‹8µ·“ËÅ1
+H	java:S106¦"+Replace this use of System.out by a logger.(è åù8µ·“ËÅ1
+^	java:S125©"<This block of commented-out lines of code should be removed.(«™¤Ùıÿÿÿÿ8µ·“ËÅ1
+y
+java:S3252ç"[Use static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_ALWAYS".(Ğ÷­„8¸·“ËÅ1
+H	java:S106î"+Replace this use of System.out by a logger.(­ü´ğ8¹·“ËÅ1
+H	java:S106ü"+Replace this use of System.out by a logger.(Ù÷ê—8º·“ËÅ1
+J
+java:S1602ı",Remove useless curly braces around statement(®Ì»ê8º·“ËÅ1
+V
+java:S1612ı"8Replace this lambda with method reference 'Window::new'.(®Ì»ê8º·“ËÅ1
+M	java:S106ˆ"+Replace this use of System.out by a logger.(‡¶Ù¾ùÿÿÿÿ8¼·“ËÅ1
+Y
+java:S1612‰";Replace this lambda with method reference 'TicTacToe::new'.(’¶ä²8¼·“ËÅ1
+H	java:S106‘"+Replace this use of System.out by a logger.(Ìì‹›8¼·“ËÅ1
+]
+java:S1612’":Replace this lambda with method reference 'SudokuUI::new'.(ìüÊ¢ÿÿÿÿÿ8½·“ËÅ1
+J
+java:S1602Ñ",Remove useless curly braces around statement(Åº÷8Á·“ËÅ1
+N
+java:S1172õ"+Remove this unused method parameter "name".(øÔéúÿÿÿÿ8Å·“ËÅ1
+P
+java:S1068".Remove this unused "imageStore" private field.(•½Ñöşÿÿÿÿ8Æ·“ËÅ1

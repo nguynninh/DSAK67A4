@@ -1,0 +1,31 @@
+
+^
+java:S6208"CMerge the previous cases into this one using comma-separated label.(×Ãäıÿÿÿÿ
+^
+java:S6208"CMerge the previous cases into this one using comma-separated label.(ÿìÙşÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(úãÚ‘úÿÿÿÿ
+C
+java:S1905_"&Remove this unnecessary cast to "int".(Ìğ¡ğ8ÿÓ’Æ1
+H
+java:S1905`"&Remove this unnecessary cast to "int".(ÊÌº¦ùÿÿÿÿ8ÿÓ’Æ1
+C
+java:S1905a"&Remove this unnecessary cast to "int".(ú„Ñ¥8ÿÓ’Æ1
+H
+java:S1905b"&Remove this unnecessary cast to "int".(ğî¼ôøÿÿÿÿ8ÿÓ’Æ1
+\
+java:S1126d"AReplace this if-then-else statement by a single return statement.(¿àå¥úÿÿÿÿ
+C
+java:S1905u"&Remove this unnecessary cast to "int".(Ìğ¡ğ8Ô’Æ1
+C
+java:S1905v"&Remove this unnecessary cast to "int".(ú„Ñ¥8Ô’Æ1
+H
+java:S1905x"&Remove this unnecessary cast to "int".(ÊÌº¦ùÿÿÿÿ8ƒÔ’Æ1
+H
+java:S1905y"&Remove this unnecessary cast to "int".(ğî¼ôøÿÿÿÿ8ƒÔ’Æ1
+B
+java:S1905z"&Remove this unnecessary cast to "int".(Í°“#8ƒÔ’Æ1
+C
+java:S1905{"&Remove this unnecessary cast to "int".(ÛÓÌ8ƒÔ’Æ1
+]
+java:S1126€"AReplace this if-then-else statement by a single return statement.(Ó­İ£ÿÿÿÿÿ
