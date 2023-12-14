@@ -1,0 +1,10 @@
+
+c
+java:S11921"FDefine a constant instead of duplicating this literal "Arial" 9 times.(Ö¶õ8£øî¹Æ1
+>
+java:S1170	"!Make this final field static too.(Õ•â×8ñâì¹Æ1
+=
+java:S1170
+"!Make this final field static too.(ı×—8ñâì¹Æ1
+g
+java:S3252‹"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8×øî¹Æ1

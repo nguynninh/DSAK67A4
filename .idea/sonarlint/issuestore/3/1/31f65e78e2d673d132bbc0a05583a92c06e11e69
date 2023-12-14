@@ -1,0 +1,28 @@
+
+h
+java:S1192@"FDefine a constant instead of duplicating this literal "Arial" 5 times.(ı‡ûÿÿÿÿ8Í­Æ1
+f
+java:S2583"CChange this condition so that it does not always evaluate to "true"(Í™Ôüÿÿÿÿ8íÔ¹Æ1
+{	java:S116%"_Rename this field "PROPERTIES_FILE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÒ ğ8’Í­Æ1
+C
+java:S1170"!Make this final field static too.(•íÛºşÿÿÿÿ8“Í­Æ1
+C
+java:S1170"!Make this final field static too.(§«ªˆûÿÿÿÿ8“Í­Æ1
+O
+java:S1948"-Make "userService" transient or serializable.(äüçˆùÿÿÿÿ8”Í­Æ1
+X	java:S1252"<This block of commented-out lines of code should be removed.(Üôæô8–Í­Æ1
+¤
+java:S1186Æ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8 Í­Æ1
+¤
+java:S1186×"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8¡Í­Æ1
+F	java:S108’")Either remove or fill this block of code.(å¥‡8‚Ô¹Æ1
+`
+java:S1117"BRename "userProperties" which hides the field declared at line 36.(Ä¢µÃ8‚Ô¹Æ1
+i
+java:S5998Í"LRefactor this repetition that can lead to a stack overflow for large inputs.(õæˆB8…Ô¹Æ1
+\
+java:S1854Ø">Remove this useless assignment to local variable "digitsOnly".(ıšœÉ8†Ô¹Æ1
+[
+java:S6353Ô"=Use concise character class syntax '\\D' instead of '[^0-9]'.(˜¿ü•8†Ô¹Æ1
+g
+java:S3252á"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8‡Ô¹Æ1

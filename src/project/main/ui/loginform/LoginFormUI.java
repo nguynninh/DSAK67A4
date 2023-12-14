@@ -2,6 +2,7 @@ package project.main.ui.loginform;
 
 import org.mindrot.bcrypt.BCrypt;
 import project.main.SettingPanel;
+import project.main.ui.admin.DashboardFormUI;
 import project.main.ui.forgotpass.ForgotPasswordUI;
 import project.main.ui.register.RegisterFormUI;
 import project.main.user.UserService;
@@ -228,13 +229,14 @@ public class LoginFormUI extends JPanel {
                 return;
             }
 
-            if (saveAccount) {
-                saveUserProperties(username, password);
-            }
+            if (saveAccount) saveUserProperties(username, password);
 
-            System.out.println("Username: " + username);
-            System.out.println("Password: " + BCrypt.hashpw(password, BCrypt.gensalt(12)));
-            System.out.println("Save Account: " + saveAccount + " to " + PROPERTIES_FILE_PATH);
+            DashboardFormUI dashboardFormUI = new DashboardFormUI();
+            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblCreateAcc);
+            frame.getContentPane().removeAll();
+            frame.getContentPane().add(dashboardFormUI);
+            frame.pack();
+            frame.repaint();
         });
 
         lblQuenPass.addMouseListener(new MouseAdapter() {

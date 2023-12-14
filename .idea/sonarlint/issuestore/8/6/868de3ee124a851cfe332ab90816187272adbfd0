@@ -1,0 +1,33 @@
+
+c
+java:S1192."FDefine a constant instead of duplicating this literal "Arial" 9 times.(Ö¶õ8‡¿¸Æ1
+s
+java:S1104"VMake jLabelLogo a static final constant or non-public and provide accessors if needed.(ë¹¨›8•„ì¹Æ1
+C
+java:S1170"!Make this final field static too.(·ó÷şÿÿÿÿ8œ¿¸Æ1
+=
+java:S1170"!Make this final field static too.(ı×—8œ¿¸Æ1
+£
+java:S1186f"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ëÿğşÿÿÿÿ8¿¸Æ1
+t
+java:S1450"WRemove the "lblAbout" field and declare it as a local variable in the relevant methods.(£úù‘8¿¸Æ1
+|
+java:S1450"ZRemove the "lblCustomer" field and declare it as a local variable in the relevant methods.(³ØÉìıÿÿÿÿ8Ÿ¿¸Æ1
+x
+java:S1450"[Remove the "lblDashboard" field and declare it as a local variable in the relevant methods.(ß¾¡8 ¿¸Æ1
+z
+java:S1450"XRemove the "lblLogout" field and declare it as a local variable in the relevant methods.(ì¾ãùÿÿÿÿ8¢¿¸Æ1
+{
+java:S1450"YRemove the "lblMessage" field and declare it as a local variable in the relevant methods.(Ç²´ïüÿÿÿÿ8£¿¸Æ1
+~
+java:S1450"\Remove the "lblPayHistory" field and declare it as a local variable in the relevant methods.(—Õôıÿÿÿÿ8¥¿¸Æ1
+t
+java:S1450"XRemove the "lblRepost" field and declare it as a local variable in the relevant methods.(¼ïÕ 8¦¿¸Æ1
+v
+java:S1450"YRemove the "lblSetting" field and declare it as a local variable in the relevant methods.(â¬è8¦¿¸Æ1
+r
+java:S1450"VRemove the "lblthem" field and declare it as a local variable in the relevant methods.(ÅÒ—\8¦¿¸Æ1
+^
+java:S3252""AUse static access with "javax.swing.SwingConstants" for "CENTER".(Àø¼8«¿¸Æ1
+f
+java:S3252t"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8Á¿¸Æ1

@@ -1,0 +1,33 @@
+
+f
+java:S1192}"IDefine a constant instead of duplicating this literal "show.png" 4 times.(ÉÂŒ×8¾¬â¬Æ1
+i
+java:S1192?"GDefine a constant instead of duplicating this literal "Arial" 11 times.(ı‡ûÿÿÿÿ8¿¬â¬Æ1
+C
+java:S1170"!Make this final field static too.(•íÛºşÿÿÿÿ8Ô¬â¬Æ1
+C
+java:S1170"!Make this final field static too.(§«ªˆûÿÿÿÿ8Ô¬â¬Æ1
+K
+java:S1948")Make "service" transient or serializable.(çş¿–úÿÿÿÿ8Õ¬â¬Æ1
+¤
+java:S1186’"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8á¬â¬Æ1
+¤
+java:S1186¢"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8á¬â¬Æ1
+¤
+java:S1186³"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8â¬â¬Æ1
+¤
+java:S1186Ä"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8ã¬â¬Æ1
+¤
+java:S1186Ô"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8ã¬â¬Æ1
+i
+java:S5998Ê"LRefactor this repetition that can lead to a stack overflow for large inputs.(õæˆB8é¬â¬Æ1
+\
+java:S1854Õ">Remove this useless assignment to local variable "digitsOnly".(ıšœÉ8é¬â¬Æ1
+[
+java:S6353Ñ"=Use concise character class syntax '\\D' instead of '[^0-9]'.(˜¿ü•8ê¬â¬Æ1
+g
+java:S3252Ş"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8ë¬â¬Æ1
+V
+java:S1068"4Remove this unused "checkBoxRemember" private field.(µ’à¼ıÿÿÿÿ8ë¬â¬Æ1
+L
+java:S1068 "/Remove this unused "lblQuenPass" private field.(Ï½»ñ8ë¬â¬Æ1

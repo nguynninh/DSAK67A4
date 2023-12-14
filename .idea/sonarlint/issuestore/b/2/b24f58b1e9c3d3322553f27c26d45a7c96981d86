@@ -1,0 +1,15 @@
+
+C
+java:S1604i"(Make this anonymous inner class a lambda(¨í¡§úÿÿÿÿ
+q
+java:S1450q"VRemove the "header2" field and declare it as a local variable in the relevant methods.(ØšÖ×øÿÿÿÿ
+v
+java:S1450s"[Remove the "panelBorder1" field and declare it as a local variable in the relevant methods.(Ğ·¥’üÿÿÿÿ
+E
+java:S1197P"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+Z
+java:S2147_"DCombine this catch with the one at line 93, which has the same body.(¨¦Š½
+Z
+java:S2147a"DCombine this catch with the one at line 95, which has the same body.(ã€ 
+Y
+java:S2147c"DCombine this catch with the one at line 97, which has the same body.(ñÎ¯%
