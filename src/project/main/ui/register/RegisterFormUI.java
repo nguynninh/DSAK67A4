@@ -1,6 +1,6 @@
 package project.main.ui.register;
 
-import project.main.SettingPanel;
+import project.main.ui.client.SettingPanel;
 import project.main.ui.loginform.LoginFormUI;
 import project.main.user.User;
 import project.main.user.UserService;

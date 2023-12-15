@@ -1,7 +1,7 @@
 package project.main.ui.loginform;
 
 import org.mindrot.bcrypt.BCrypt;
-import project.main.SettingPanel;
+import project.main.ui.client.SettingPanel;
 import project.main.ui.admin.DashboardFormUI;
 import project.main.ui.forgotpass.ForgotPasswordUI;
 import project.main.ui.register.RegisterFormUI;
