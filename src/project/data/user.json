@@ -1,8 +1,18 @@
-[{
-  "password": "$2a$12$eq/M.NaM661ROvqaGdEJ7u2x3XbJjdakFipQbGYe6wg5G0pbtXk/G",
-  "id": 1,
-  "fullname": "Nguyen Ninh",
-  "isempty": true,
-  "email": "nguyenninhpt@gmail.com",
-  "username": "nguyenninh"
-}]
+[
+  {
+    "password": "$2a$12$eq/M.NaM661ROvqaGdEJ7u2x3XbJjdakFipQbGYe6wg5G0pbtXk/G",
+    "id": 1,
+    "fullname": "Nguyen Ninh",
+    "isempty": true,
+    "email": "nguyenninh@admin.com",
+    "username": "nguyenninh"
+  },
+  {
+    "password": "$2a$12$v07IuULmgakBiIIAUYWdGuaKsn7kC8C7ngRgFH4/ORNcxwneEjrCG",
+    "id": 2,
+    "fullname": "Le Van An",
+    "isempty": true,
+    "email": "levanan@gmail.com",
+    "username": "levanan"
+  }
+]

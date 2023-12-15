@@ -20,7 +20,7 @@ public class UserService {
 
     public boolean loginUser(String username, String password) {
         User user = userRepository.getUserByUsernameOrEmail(username);
-        return user != null && BCrypt.checkpw(password, user.password);
+        return user != null && BCrypt.checkpw(password, user.password) && user.isEmpty;
     }
 
 
@@ -54,6 +54,9 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return userRepository.getAllUsers();
+    }
+    public User getUsers(String username) {
+        return userRepository.getUserByUsernameOrEmail(username);
     }
 
     public void print() {

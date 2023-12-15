@@ -1,16 +1,0 @@
-
-C
-java:S1170
-"!Make this final field static too.(€İÉœıÿÿÿÿ8Ì”µ¯Æ1
-C
-java:S1170"!Make this final field static too.(§«ªˆûÿÿÿÿ8Ğ”µ¯Æ1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ü·úÿÿÿÿ8Ñ”µ¯Æ1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ëÿğşÿÿÿÿ8Ñ”µ¯Æ1
-O
-java:S1948"-Make "userService" transient or serializable.(äüçˆùÿÿÿÿ8Ó”µ¯Æ1
-f
-java:S3252$"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8½¶¯Æ1
-Q
-java:S1068"/Remove this unused "userService" private field.(äüçˆùÿÿÿÿ8Û”µ¯Æ1

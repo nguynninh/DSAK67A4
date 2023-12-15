@@ -362,8 +362,7 @@ public class RegisterFormUI extends JPanel {
                 frame.getContentPane().add(loginFormUi);
                 frame.pack();
                 frame.repaint();
-            }
-            else JOptionPane.showMessageDialog(null, "Tài khoản đã tồn tại", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            } else JOptionPane.showMessageDialog(null, "Tài khoản đã tồn tại", "Lỗi", JOptionPane.ERROR_MESSAGE);
         });
 
         lblLoginAcc.addMouseListener(new MouseAdapter() {

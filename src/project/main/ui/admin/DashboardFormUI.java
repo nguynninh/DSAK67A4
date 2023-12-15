@@ -1,5 +1,8 @@
 package project.main.ui.admin;
 
+import project.main.ui.loginform.LoginFormUI;
+import project.main.user.UserService;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -8,11 +11,15 @@ import java.awt.event.MouseEvent;
 public class DashboardFormUI extends JPanel {
     private final int sizeWidth = 1000;
     private final int sizeHeight = 700;
+    private UserService userService = UserService.getInstance();
+    public String userLogin;
 
     //Hanh dong
     private MenuFormUI panelMenuOpen;
     private JPanel panelMenuClose;
+    private JPanel panelContent;
     private JLabel lblMenu;
+    private JLabel lblLogout;
 
     public DashboardFormUI() {
         setLayout(new BorderLayout());
@@ -26,10 +33,15 @@ public class DashboardFormUI extends JPanel {
         actionListener();
     }
 
+    public DashboardFormUI(String userLogin) {
+        this();
+        this.userLogin = userLogin;
+    }
+
     private void initComponents() {
         panelMenuClose = new JPanel(new BorderLayout());
         panelMenuClose.setPreferredSize(new Dimension((int) (sizeWidth * 0.07), sizeHeight));
-        panelMenuClose.setBackground(Color.GRAY);
+        panelMenuClose.setBackground(Color.WHITE);
 
         JPanel jPanelMenu = new JPanel();
         jPanelMenu.setPreferredSize(new Dimension((int) (sizeWidth * 0.1), (int) (sizeHeight * 0.1)));
@@ -89,7 +101,7 @@ public class DashboardFormUI extends JPanel {
         lblSetting.setIcon(resizeImageIcon("settings.png", 25, 25));
         lblSetting.setFont(new Font("Arial", Font.BOLD, 16));
         lblSetting.setForeground(Color.BLACK);
-        JLabel lblLogout = new JLabel();
+        lblLogout = new JLabel();
         lblLogout.setIcon(resizeImageIcon("logout.png", 25, 25));
         lblLogout.setFont(new Font("Arial", Font.BOLD, 16));
         lblLogout.setForeground(Color.BLACK);
@@ -102,6 +114,120 @@ public class DashboardFormUI extends JPanel {
         panelMenuClose.add(footerPanel, BorderLayout.SOUTH);
 
         add(panelMenuClose, BorderLayout.WEST);
+
+        //Panel Right
+        panelContent = new JPanel(new BorderLayout());
+        panelContent.setPreferredSize(new Dimension((int) (sizeWidth * 0.93), sizeHeight));
+        panelContent.setBackground(new Color(233, 221, 213));
+
+        JPanel panelTop = new JPanel(new BorderLayout());
+        panelTop.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.08)));
+        panelTop.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+
+        JPanel panelTopLeft = new JPanel(new FlowLayout());
+        JTextField jTextFieldSearch = new JTextField();
+        jTextFieldSearch.setText("Bạn muốn tìm gì?");
+        jTextFieldSearch.setPreferredSize(new Dimension(new Dimension(300, (int) (sizeHeight * 0.05))));
+        jTextFieldSearch.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(Color.BLACK, 2)
+                , BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+        jTextFieldSearch.setFont(new Font("Arial", Font.PLAIN + Font.ITALIC, 14));
+        jTextFieldSearch.setForeground(Color.BLACK);
+
+        JLabel jLabelSearch = new JLabel(resizeImageIcon("search.png", 32, 32));
+        jLabelSearch.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+
+        panelTopLeft.add(jTextFieldSearch);
+        panelTopLeft.add(jLabelSearch);
+        panelTop.add(panelTopLeft, BorderLayout.WEST);
+
+        JPanel panelTopRight = new JPanel(new FlowLayout());
+        JLabel jLabelAvatar = new JLabel("Chào Admin");
+        jLabelAvatar.setIcon(resizeImageIcon("avatar.png", 32, 32));
+        jLabelAvatar.setFont(new Font("Arial", Font.BOLD, 16));
+        jLabelAvatar.setForeground(Color.BLACK);
+
+        JLabel jLabelNnotifi = new JLabel(resizeImageIcon("notification-bell.png", 32, 32));
+        jLabelNnotifi.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+
+        JLabel jLabelEmail = new JLabel(resizeImageIcon("mail.png", 32, 32));
+        jLabelEmail.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+
+        panelTopRight.add(jLabelNnotifi);
+        panelTopRight.add(jLabelEmail);
+        panelTopRight.add(jLabelAvatar);
+        panelTop.add(panelTopRight, BorderLayout.EAST);
+        panelContent.add(panelTop, BorderLayout.NORTH);
+
+        JPanel jPanelBottom = new JPanel(new BorderLayout());
+        jPanelBottom.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.92)));
+
+        JPanel panelOverview = new JPanel(new GridLayout(1, 3, 40, 0));
+        panelOverview.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.3)));
+        panelOverview.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        panelOverview.setBackground(null);
+        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + userService.getAllUsers().size(), "Đang trên đà phát triển mạnh");
+        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + userService.getAllUsers().size(), "Đang trên đà phát triển mạnh");
+        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + userService.getAllUsers().size(), "Đang trên đà phát triển mạnh");
+        jPanelBottom.add(panelOverview, BorderLayout.NORTH);
+
+        JPanel panelNav = new JPanel(new BorderLayout());
+        panelNav.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.62)));
+
+        JPanel panelUser = new JPanel(new BorderLayout());
+        panelUser.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.62)));
+        panelUser.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
+        panelUser.setBackground(Color.CYAN);
+
+        JPanel jPanelUT = new JPanel(new BorderLayout());
+        jPanelUT.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.07)));
+        JPanel jPanelUTL = new JPanel(new FlowLayout());
+        JLabel jLabelUTL = new JLabel("Data User");
+        jLabelUTL.setIcon(resizeImageIcon("data.png", 28, 28));
+        jLabelUTL.setFont(new Font("Arial", Font.BOLD, 18));
+        jLabelUTL.setForeground(Color.BLACK);
+        jPanelUTL.add(jLabelUTL);
+        jPanelUT.add(jPanelUTL, BorderLayout.WEST);
+        panelUser.add(jPanelUT, BorderLayout.NORTH);
+
+//        JPanel jPanelUB = new JPanel(new GridLayout(5, 1));
+//        jPanelUT.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.62 - sizeHeight * 0.07)));
+//        jPanelUB.setBackground(Color.orange);
+//        panelUser.add(jPanelUB, BorderLayout.SOUTH);
+
+        panelNav.add(panelUser, BorderLayout.WEST);
+
+        JPanel panelNotifi = new JPanel();
+        panelNotifi.setPreferredSize(new Dimension(330, (int) (sizeHeight * 0.62)));
+        panelNotifi.setBackground(Color.YELLOW);
+
+        panelNav.add(panelNotifi, BorderLayout.EAST);
+
+        jPanelBottom.add(panelNav, BorderLayout.SOUTH);
+
+        panelContent.add(jPanelBottom, BorderLayout.SOUTH);
+        add(panelContent, BorderLayout.EAST);
+    }
+
+    private void extractedPanelOverview(JPanel panelOverview, String img, String name, String value, String comment) {
+        JPanel jPanelLeftOv = new JPanel(new GridLayout(4, 1));
+        jPanelLeftOv.setBackground(new Color(220, 210, 202));
+        jPanelLeftOv.setBorder(BorderFactory.createEmptyBorder(20, 20, 0, 0));
+        JPanel jPanelLOv1 = new JPanel(new BorderLayout());
+        jPanelLOv1.setBackground(null);
+        JLabel jLabelLOv1 = new JLabel(resizeImageIcon(img, 48, 48));
+        jPanelLOv1.add(jLabelLOv1, BorderLayout.WEST);
+        jPanelLeftOv.add(jPanelLOv1);
+        JLabel jLabelLOv2 = new JLabel(name);
+        jLabelLOv2.setFont(new Font("Arial", Font.PLAIN, 16));
+        jPanelLeftOv.add(jLabelLOv2);
+        JLabel jLabelLOv3 = new JLabel(value);
+        jLabelLOv3.setFont(new Font("Arial", Font.BOLD, 24));
+        jPanelLeftOv.add(jLabelLOv3);
+        JLabel jLabelLOv4 = new JLabel(comment);
+        jLabelLOv4.setBorder(BorderFactory.createEmptyBorder(0, 0, 30, 0));
+        jPanelLeftOv.add(jLabelLOv4);
+        panelOverview.add(jPanelLeftOv);
     }
 
     private void actionListener() {
@@ -110,6 +236,7 @@ public class DashboardFormUI extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 remove(panelMenuClose);
                 add(panelMenuOpen, BorderLayout.WEST);
+                panelContent.setPreferredSize(new Dimension(sizeWidth - panelMenuOpen.sizeWidth, sizeHeight));
                 revalidate();
                 repaint();
             }
@@ -120,10 +247,36 @@ public class DashboardFormUI extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 remove(panelMenuOpen);
                 add(panelMenuClose, BorderLayout.WEST);
+                panelContent.setPreferredSize(new Dimension((int) (sizeWidth * 0.93), sizeHeight));
                 revalidate();
                 repaint();
             }
         });
+
+        lblLogout.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int option = JOptionPane.showConfirmDialog(
+                        null,
+                        "Bạn có chắc chắn muốn đăng xuất?",
+                        "Xác nhận đăng xuất",
+                        JOptionPane.YES_NO_OPTION
+                );
+
+                if (option == JOptionPane.YES_OPTION) {
+                    performLogout();
+                }
+            }
+        });
+    }
+
+    private void performLogout() {
+        LoginFormUI loginFormUI = new LoginFormUI();
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblLogout);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(loginFormUI);
+        frame.pack();
+        frame.repaint();
     }
 
     private ImageIcon resizeImageIcon(String imagePath, int width, int height) {

@@ -1,10 +1,14 @@
 package project.main.ui.admin;
 
+import project.main.ui.loginform.LoginFormUI;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class MenuFormUI extends JPanel {
-    private final int sizeWidth = 200;
+    public final int sizeWidth = 200;
     private final int sizeHeight = 700;
 
     // Hanh dông
@@ -42,27 +46,27 @@ public class MenuFormUI extends JPanel {
         navPanel.setBorder(BorderFactory.createEmptyBorder(0, 20, 90, 20));
 
         lblDashboard = new JLabel("Bảng điều kiển");
-        lblDashboard.setIcon(resizeImageIcon("dashboard.png",25,25));
+        lblDashboard.setIcon(resizeImageIcon("dashboard.png", 25, 25));
         lblDashboard.setFont(new Font("Arial", Font.BOLD, 16));
         lblDashboard.setForeground(Color.BLACK);
         lblCustomer = new JLabel("Người dùng");
-        lblCustomer.setIcon(resizeImageIcon("group.png",25,25));
+        lblCustomer.setIcon(resizeImageIcon("group.png", 25, 25));
         lblCustomer.setFont(new Font("Arial", Font.BOLD, 16));
         lblCustomer.setForeground(Color.BLACK);
         lblMessage = new JLabel("Tin nhắn");
-        lblMessage.setIcon(resizeImageIcon("comments.png",25,25));
+        lblMessage.setIcon(resizeImageIcon("comments.png", 25, 25));
         lblMessage.setFont(new Font("Arial", Font.BOLD, 16));
         lblMessage.setForeground(Color.BLACK);
         lblPayHistory = new JLabel("Lịch sử");
-        lblPayHistory.setIcon(resizeImageIcon("credit-card.png",25,25));
+        lblPayHistory.setIcon(resizeImageIcon("credit-card.png", 25, 25));
         lblPayHistory.setFont(new Font("Arial", Font.BOLD, 16));
         lblPayHistory.setForeground(Color.BLACK);
         lblRepost = new JLabel("Đồng bộ");
-        lblRepost.setIcon(resizeImageIcon("retweet.png",25,25));
+        lblRepost.setIcon(resizeImageIcon("retweet.png", 25, 25));
         lblRepost.setFont(new Font("Arial", Font.BOLD, 16));
         lblRepost.setForeground(Color.BLACK);
         lblthem = new JLabel("Thêm");
-        lblthem.setIcon(resizeImageIcon("settings-sliders.png",25,25));
+        lblthem.setIcon(resizeImageIcon("settings-sliders.png", 25, 25));
         lblthem.setFont(new Font("Arial", Font.BOLD, 16));
         lblthem.setForeground(Color.BLACK);
         navPanel.add(new Label("___________________________________"));
@@ -100,7 +104,31 @@ public class MenuFormUI extends JPanel {
     }
 
     private void actionListener() {
+        lblLogout.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int option = JOptionPane.showConfirmDialog(
+                        null,
+                        "Bạn có chắc chắn muốn đăng xuất?",
+                        "Xác nhận đăng xuất",
+                        JOptionPane.YES_NO_OPTION
+                );
 
+                if (option == JOptionPane.YES_OPTION) {
+                    performLogout();
+                }
+            }
+        });
+
+    }
+
+    private void performLogout() {
+        LoginFormUI loginFormUI = new LoginFormUI();
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblLogout);
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(loginFormUI);
+        frame.pack();
+        frame.repaint();
     }
 
     private ImageIcon resizeImageIcon(String imagePath, int width, int height) {

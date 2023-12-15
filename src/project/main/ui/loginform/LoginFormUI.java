@@ -231,12 +231,21 @@ public class LoginFormUI extends JPanel {
 
             if (saveAccount) saveUserProperties(username, password);
 
-            DashboardFormUI dashboardFormUI = new DashboardFormUI();
-            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblCreateAcc);
-            frame.getContentPane().removeAll();
-            frame.getContentPane().add(dashboardFormUI);
-            frame.pack();
-            frame.repaint();
+            if (username.contains("@admin.com")) {
+                DashboardFormUI dashboardFormUI = new DashboardFormUI();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(buttonLogin);
+                frame.getContentPane().removeAll();
+                frame.getContentPane().add(dashboardFormUI);
+                frame.pack();
+                frame.repaint();
+            }else {
+                SettingPanel playStore = new SettingPanel();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(buttonLogin);
+                frame.getContentPane().removeAll();
+                frame.getContentPane().add(playStore);
+                frame.pack();
+                frame.repaint();
+            }
         });
 
         lblQuenPass.addMouseListener(new MouseAdapter() {
