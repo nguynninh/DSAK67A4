@@ -6,6 +6,7 @@ import project.main.games.game2048.ui.GamePanel;
 import project.main.games.snake.view.Window;
 import project.main.games.sudoku.ui.SudokuUI;
 import project.main.games.tictactoe.TicTacToe;
+import project.main.user.User;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -20,7 +21,7 @@ public class SettingPanel extends JPanel implements Runnable {
     //Map for app
     Map<String, Object> searchingApp = new HashMap<>();
     //PRIVATE SETTING
-    private final String nameStore = "Cửa hàng trò chơi";
+    public static final String nameStore = "Cửa hàng trò chơi";
     private final String imageStore = "logo.png";
     public static final int screenWith = 700;
     public static final int screenHeight = 600;
@@ -30,10 +31,9 @@ public class SettingPanel extends JPanel implements Runnable {
 
     // Date
     private Date date;
-
     private Color colorBg = Color.WHITE;
-
     private SlideShowPanel pnSlider;
+    private User user;
 
     //Button
     private JButton btnMenu;
@@ -44,13 +44,14 @@ public class SettingPanel extends JPanel implements Runnable {
 
     // App and Game
 
-    public SettingPanel() {
+    public SettingPanel(User user) {
         this.setPreferredSize(new Dimension(screenWith, screenHeight));
         this.setBackground(colorBg);
         this.setDoubleBuffered(true);
         this.setName(nameStore);
         date = new Date();
 
+        this.user = user;
         pnSlider = new SlideShowPanel();
 
         storeThread = new Thread(this);
@@ -97,7 +98,7 @@ public class SettingPanel extends JPanel implements Runnable {
             rightHeaderPanel.setBackground(colorBg);
 
             JLabel lblScore = new JLabel();
-            lblScore.setText("1000");
+            lblScore.setText(user.getScores() + "");
             lblScore.setFont(new Font("Arial", Font.BOLD, 20));
             rightHeaderPanel.add(lblScore);
 

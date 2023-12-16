@@ -1,8 +1,8 @@
 package project.main.ui.loginform;
 
 import org.mindrot.bcrypt.BCrypt;
-import project.main.ui.client.SettingPanel;
 import project.main.ui.admin.DashboardFormUI;
+import project.main.ui.client.SettingPanel;
 import project.main.ui.forgotpass.ForgotPasswordUI;
 import project.main.ui.register.RegisterFormUI;
 import project.main.user.UserService;
@@ -222,6 +222,7 @@ public class LoginFormUI extends JPanel {
             String password = String.valueOf(passwordField.getPassword());
             boolean saveAccount = checkBoxRemember.isSelected();
 
+            // Xác thực đăng nhập
             if (userService.loginUser(username, password)) {
                 JOptionPane.showMessageDialog(null, "Đăng nhập thành công");
             } else {
@@ -229,25 +230,66 @@ public class LoginFormUI extends JPanel {
                 return;
             }
 
-            if (userService.getUsers(username).getRoleToInt() > 1) {
+            // Chuyển hướng đăng nhập
+            int role = userService.getUsers(username).getRoleToInt();
+
+            if (role > 1) {
+                Object[] options = role == 3 ?
+                        new Object[]{"Thoát", "User", "Admin", "SuperAdmin"} :
+                        new Object[]{"Thoát", "User", "Admin"};
+
+                int choice = JOptionPane.showOptionDialog(
+                        null,
+                        "Bạn muốn đăng nhập dưới quyền là gì ?.\nChọn một tùy chọn:",
+                        "Chuyển hướng đăng nhập",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.WARNING_MESSAGE,
+                        null,
+                        options,
+                        options[0]);
+
+                switch (choice) {
+                    case JOptionPane.CLOSED_OPTION, 0 -> role = -1;
+                    case 1 -> role = 1;
+                    case 2 -> role = 2;
+                    case 3 -> role = 3;
+                }
+            }
+
+            if (role > 1) {
                 if (saveAccount) saveUserProperties(username, password);
 
-                DashboardFormUI dashboardFormUI = new DashboardFormUI();
+                DashboardFormUI dashboardFormUI = new DashboardFormUI(userService.getUsers(username));
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(buttonLogin);
                 frame.getContentPane().removeAll();
                 frame.getContentPane().add(dashboardFormUI);
                 frame.pack();
                 frame.repaint();
-            } else if (userService.getUsers(username).getRoleToInt() == 1) {
+            } else if (role == 1) {
                 if (saveAccount) saveUserProperties(username, password);
 
-                SettingPanel playStore = new SettingPanel();
+                SettingPanel playStore = new SettingPanel(userService.getUsers(username));
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(buttonLogin);
                 frame.getContentPane().removeAll();
                 frame.getContentPane().add(playStore);
                 frame.pack();
                 frame.repaint();
-            } else JOptionPane.showMessageDialog(null, "Tài khoản của bạn đã bị khóa");
+            } else if (role == 0)
+                JOptionPane.showMessageDialog(null, "Tài khoản của bạn đã bị khóa");
+            else {
+                int choice = JOptionPane.showOptionDialog(
+                        null,
+                        "Xin chào và hẹn gặp lại!",
+                        SettingPanel.nameStore,
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        new Object[]{"Ở lại", "Rời đi"},
+                        "default");
+
+                if (JOptionPane.NO_OPTION == choice)
+                    System.exit(0);
+            }
         });
 
         lblQuenPass.addMouseListener(new MouseAdapter() {

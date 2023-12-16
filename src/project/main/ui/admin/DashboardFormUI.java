@@ -13,8 +13,8 @@ import java.util.List;
 public class DashboardFormUI extends JPanel {
     private final int sizeWidth = 1000;
     private final int sizeHeight = 700;
-    private UserService userService = UserService.getInstance();
-    public String userLogin;
+    private UserService userService;
+    private User userDash;
 
     //Hanh dong
     private MenuFormUI panelMenuOpen;
@@ -26,21 +26,18 @@ public class DashboardFormUI extends JPanel {
     private JPanel panelUser;
     private JPanel jPanelUB;
 
-    public DashboardFormUI() {
+    public DashboardFormUI(User user) {
         setLayout(new BorderLayout());
         setPreferredSize(new Dimension(sizeWidth, sizeHeight));
         setBackground(null);
 
+        userService = UserService.getInstance();
+        userDash = user;
         panelMenuOpen = new MenuFormUI();
 
         initComponents();
 
         actionListener();
-    }
-
-    public DashboardFormUI(String userLogin) {
-        this();
-        this.userLogin = userLogin;
     }
 
     private void initComponents() {
@@ -143,7 +140,7 @@ public class DashboardFormUI extends JPanel {
         panelTop.add(panelTopLeft, BorderLayout.WEST);
 
         JPanel panelTopRight = new JPanel(new FlowLayout());
-        JLabel jLabelAvatar = new JLabel("Chào Admin");
+        JLabel jLabelAvatar = new JLabel("Chào " + userDash.getFullname());
         jLabelAvatar.setIcon(resizeImageIcon("avatar.png", 32, 32));
         jLabelAvatar.setFont(new Font("Arial", Font.BOLD, 16));
         jLabelAvatar.setForeground(Color.BLACK);
@@ -264,7 +261,7 @@ public class DashboardFormUI extends JPanel {
                 );
 
                 if (option == JOptionPane.YES_OPTION) {
-                    performLogout();
+                    performLogout(lblLogout);
                 }
             }
         });
@@ -298,7 +295,7 @@ public class DashboardFormUI extends JPanel {
                 );
 
                 if (option == JOptionPane.YES_OPTION) {
-                    performLogout();
+                    performLogout(panelMenuOpen.lblLogout);
                 }
             }
         });
@@ -354,9 +351,10 @@ public class DashboardFormUI extends JPanel {
         repaint();
     }
 
-    private void performLogout() {
+    private void performLogout(JLabel jLabel) {
         LoginFormUI loginFormUI = new LoginFormUI();
-        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(lblLogout);
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(jLabel);
+
         frame.getContentPane().removeAll();
         frame.getContentPane().add(loginFormUI);
         frame.pack();
@@ -375,8 +373,8 @@ public class DashboardFormUI extends JPanel {
             JFrame frame = new JFrame("Dashboard Form Example");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            DashboardFormUI dashboardFormUI = new DashboardFormUI();
-            frame.getContentPane().add(dashboardFormUI);
+//            DashboardFormUI dashboardFormUI = new DashboardFormUI();
+//            frame.getContentPane().add(dashboardFormUI);
 
             frame.pack();
             frame.setLocationRelativeTo(null);

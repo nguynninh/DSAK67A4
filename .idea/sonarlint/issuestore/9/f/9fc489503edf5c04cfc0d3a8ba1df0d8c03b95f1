@@ -1,27 +1,28 @@
 
 l
-java:S1192ª"IDefine a constant instead of duplicating this literal "Customer" 3 times.(óÑÊùÿÿÿÿ8ÅŠÛ›Ç1
+java:S1192§"IDefine a constant instead of duplicating this literal "Customer" 3 times.(óÑÊùÿÿÿÿ8öé£¢Ç1
 ‰
-java:S1192ª"fDefine a constant instead of duplicating this literal "Äang trÃªn Ä‘Ã  phÃ¡t triá»ƒn máº¡nh" 3 times.(óÑÊùÿÿÿÿ8ÅŠÛ›Ç1
+java:S1192§"fDefine a constant instead of duplicating this literal "Äang trÃªn Ä‘Ã  phÃ¡t triá»ƒn máº¡nh" 3 times.(óÑÊùÿÿÿÿ8÷é£¢Ç1
 c
-java:S1192M"FDefine a constant instead of duplicating this literal "Arial" 9 times.(ôæ”‡8ÆŠÛ›Ç1
+java:S1192J"FDefine a constant instead of duplicating this literal "Arial" 9 times.(ôæ”‡8÷é£¢Ç1
 r
-java:S1192ª"ODefine a constant instead of duplicating this literal "Sá»‘ nguá»i: " 3 times.(óÑÊùÿÿÿÿ8ÆŠÛ›Ç1
+java:S1192§"ODefine a constant instead of duplicating this literal "Sá»‘ nguá»i: " 3 times.(óÑÊùÿÿÿÿ8÷é£¢Ç1
 l
-java:S1192C"JDefine a constant instead of duplicating this literal "group.png" 4 times.(˜ÂÀÄûÿÿÿÿ8ÆŠÛ›Ç1
-r
-java:S1104"UMake userLogin a static final constant or non-public and provide accessors if needed.(ÄÔ¾î8ÉŠÛ›Ç1
+java:S1192@"JDefine a constant instead of duplicating this literal "group.png" 4 times.(˜ÂÀÄûÿÿÿÿ8÷é£¢Ç1
 _
-java:S1226x"BIntroduce a new variable instead of reusing the parameter "panel".(ë«ÇÙ8ÎŠÛ›Ç1
+java:S1226u"BIntroduce a new variable instead of reusing the parameter "panel".(ë«ÇÙ8ÿé£¢Ç1
 >
-java:S1170"!Make this final field static too.(Õ•â×8‹Û›Ç1
+java:S1170"!Make this final field static too.(Õ•â×8Ñê£¢Ç1
 =
-java:S1170"!Make this final field static too.(ı×—8‹Û›Ç1
+java:S1170"!Make this final field static too.(ı×—8Ñê£¢Ç1
 t
-java:S1450"WRemove the "jPanelUB" field and declare it as a local variable in the relevant methods.(êï®8“‹Û›Ç1
+java:S1450"WRemove the "jPanelUB" field and declare it as a local variable in the relevant methods.(êï®8¼Ô¯¢Ç1
 u
-java:S1450"XRemove the "panelUser" field and declare it as a local variable in the relevant methods.(ÊÇˆ8•‹Û›Ç1
+java:S1450"XRemove the "panelUser" field and declare it as a local variable in the relevant methods.(ÊÇˆ8Óê£¢Ç1
 O
-java:S1948"-Make "userService" transient or serializable.(äüçˆùÿÿÿÿ8—‹Û›Ç1
+java:S1948"-Make "userService" transient or serializable.(¶òÁÈùÿÿÿÿ8Óê£¢Ç1
+G
+java:S1948"*Make "userDash" transient or serializable.(¨ñ–š8Óê£¢Ç1
 g
-java:S3252ø"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8Ğ‹Û›Ç1
+java:S3252ö"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8ğê£¢Ç1
+^	java:S125ø"<This block of commented-out lines of code should be removed.(®Õâÿÿÿÿÿ8ñê£¢Ç1

@@ -1,7 +1,7 @@
 [
   {
     "password": "$2a$12$GPtSfEZEIUstVJWVqrRvVOulyoUbb1Om0yUY9JqxC4ShheXA3n1Gy",
-    "role": "Admin",
+    "role": "SuperAdmin",
     "scores": 10000,
     "id": 1,
     "fullname": "Nguyen Ninh",

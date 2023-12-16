@@ -125,7 +125,7 @@ public class UserRepository {
         else return 0;
     }
 
-    private String converRole(char role) {
+    private String converRole(int role) {
         String s = "";
 
         switch (role) {
@@ -150,7 +150,7 @@ public class UserRepository {
                 userJson.put("password", updatedUser.getPassword());
                 userJson.put("fullname", updatedUser.getFullname());
                 userJson.put("scores", updatedUser.getScores());
-                userJson.put("role", converRole(updatedUser.getRole()));
+                userJson.put("role", updatedUser.getRole());
 
                 writeJsonFile(jsonArray);
                 return;

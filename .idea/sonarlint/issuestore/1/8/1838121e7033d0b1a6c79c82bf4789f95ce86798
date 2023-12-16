@@ -11,5 +11,5 @@ z	java:S116"YRename this field "JSON_FILE_PATH" to match the regular expressi
 ^
 java:S1075"ARefactor your code to get this URI from a customizable parameter.(×ù¸Ö8ã©îÇ1
 >	java:S131ƒ""Add a default case to this switch.(¶„æ8•çğÇ1
-R
-java:S1144€"/Remove this unused private "converRole" method.(İĞÒ˜ıÿÿÿÿ8Ÿá¢ŸÇ1
+M
+java:S1144€"/Remove this unused private "converRole" method.(€¿ğ8—ØØ£Ç1
