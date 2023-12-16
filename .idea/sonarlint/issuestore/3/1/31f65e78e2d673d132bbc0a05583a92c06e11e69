@@ -1,28 +1,28 @@
 
 h
-java:S1192@"FDefine a constant instead of duplicating this literal "Arial" 5 times.(ı‡ûÿÿÿÿ8Ã½¹ÊÆ1
+java:S1192@"FDefine a constant instead of duplicating this literal "Arial" 5 times.(ı‡ûÿÿÿÿ8¸Ê²Ç1
 f
-java:S2583˜"CChange this condition so that it does not always evaluate to "true"(Í™Ôüÿÿÿÿ8¼¾¹ÊÆ1
-{	java:S116%"_Rename this field "PROPERTIES_FILE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÒ ğ8¿¾¹ÊÆ1
+java:S2583š"CChange this condition so that it does not always evaluate to "true"(Í™Ôüÿÿÿÿ8ÖÊ²Ç1
+{	java:S116%"_Rename this field "PROPERTIES_FILE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÒ ğ8×Ê²Ç1
 C
-java:S1170"!Make this final field static too.(•íÛºşÿÿÿÿ8æ¾¹ÊÆ1
+java:S1170"!Make this final field static too.(•íÛºşÿÿÿÿ8ÙÊ²Ç1
 C
-java:S1170"!Make this final field static too.(§«ªˆûÿÿÿÿ8æ¾¹ÊÆ1
+java:S1170"!Make this final field static too.(§«ªˆûÿÿÿÿ8ÙÊ²Ç1
 O
-java:S1948"-Make "userService" transient or serializable.(äüçˆùÿÿÿÿ8ê¾¹ÊÆ1
-X	java:S1252"<This block of commented-out lines of code should be removed.(Üôæô8÷¾¹ÊÆ1
+java:S1948"-Make "userService" transient or serializable.(äüçˆùÿÿÿÿ8ãá¢ŸÇ1
+X	java:S1252"<This block of commented-out lines of code should be removed.(Üôæô8ßÊ²Ç1
 ¤
-java:S1186Æ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8¿¹ÊÆ1
+java:S1186Æ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8ğÊ²Ç1
 ¤
-java:S1186×"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8¿¹ÊÆ1
-F	java:S108›")Either remove or fill this block of code.(å¥‡8¿¹ÊÆ1
+java:S1186×"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ø¡ı¥ûÿÿÿÿ8òÊ²Ç1
+F	java:S108")Either remove or fill this block of code.(å¥‡8úÊ²Ç1
 `
-java:S1117¦"BRename "userProperties" which hides the field declared at line 36.(Ä¢µÃ8Ÿ¿¹ÊÆ1
+java:S1117¨"BRename "userProperties" which hides the field declared at line 36.(Ä¢µÃ8ûÊ²Ç1
 i
-java:S5998Ö"LRefactor this repetition that can lead to a stack overflow for large inputs.(õæˆB8¦¿¹ÊÆ1
+java:S5998Ø"LRefactor this repetition that can lead to a stack overflow for large inputs.(õæˆB8‚Ë²Ç1
 \
-java:S1854á">Remove this useless assignment to local variable "digitsOnly".(ıšœÉ8§¿¹ÊÆ1
+java:S1854ã">Remove this useless assignment to local variable "digitsOnly".(ıšœÉ8ƒË²Ç1
 [
-java:S6353İ"=Use concise character class syntax '\\D' instead of '[^0-9]'.(˜¿ü•8¨¿¹ÊÆ1
+java:S6353ß"=Use concise character class syntax '\\D' instead of '[^0-9]'.(˜¿ü•8„Ë²Ç1
 g
-java:S3252ê"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8ª¿¹ÊÆ1
+java:S3252ì"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8‡Ë²Ç1

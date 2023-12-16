@@ -19,25 +19,23 @@ public class UserService {
     }
 
     public boolean loginUser(String username, String password) {
-        User user = userRepository.getUserByUsernameOrEmail(username);
-        return user != null && BCrypt.checkpw(password, user.password) && user.isEmpty;
+        User user = userRepository.getUserByEmail(username);
+        return user != null && BCrypt.checkpw(password, user.getPassword()) && user.getRoleToInt() >= 0;
     }
 
 
     public boolean addUser(User newUser) {
-        newUser.isEmpty = true;
-        newUser.password = BCrypt.hashpw(newUser.password, BCrypt.gensalt(12));
+        newUser.setPassword(BCrypt.hashpw(newUser.getPassword(), BCrypt.gensalt(12)));
         return userRepository.addUser(newUser);
     }
 
-    public void updateUser(int userId, String newFullname, String newUsername, String newPassword, String newEmail) {
+    public void updateUser(int userId, String newFullname, String newPassword, String newEmail) {
         User existingUser = userRepository.getUserById(userId);
 
         if (existingUser != null) {
-            existingUser.fullname = newFullname;
-            existingUser.username = newUsername;
-            existingUser.password = newPassword;
-            existingUser.email = newEmail;
+            existingUser.setFullname(newFullname);
+            existingUser.setPassword(newPassword);
+            existingUser.setEmail(newEmail);
 
             userRepository.updateUser(existingUser);
         }
@@ -47,7 +45,7 @@ public class UserService {
         User existingUser = userRepository.getUserById(userId);
 
         if (existingUser != null) {
-            existingUser.isEmpty = false;
+            existingUser.setRole(0);
             userRepository.updateUser(existingUser);
         }
     }
@@ -55,8 +53,8 @@ public class UserService {
     public List<User> getAllUsers() {
         return userRepository.getAllUsers();
     }
-    public User getUsers(String username) {
-        return userRepository.getUserByUsernameOrEmail(username);
+    public User getUsers(String email) {
+        return userRepository.getUserByEmail(email);
     }
 
     public void print() {

@@ -1,10 +1,15 @@
 
+i
+java:S1192!"GDefine a constant instead of duplicating this literal "scores" 3 times.(’…Õşÿÿÿÿ8Ë©îÇ1
+f
+java:S1192"IDefine a constant instead of duplicating this literal "password" 3 times.(³ˆó¹8Ê©îÇ1
+f
+java:S1192 "IDefine a constant instead of duplicating this literal "fullname" 3 times.(ŸÇÍ€8Ë©îÇ1
 h
-java:S1192"FDefine a constant instead of duplicating this literal "email" 4 times.(Õ—·ÿşÿÿÿÿ8øêÊÆ1
-k
-java:S1192"IDefine a constant instead of duplicating this literal "username" 4 times.(»Æ¨šøÿÿÿÿ8ùêÊÆ1
-z	java:S116"YRename this field "JSON_FILE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷”è—øÿÿÿÿ8ëÊÆ1
-
-java:S1186~"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒÌš¥8ëÊÆ1
+java:S1192"FDefine a constant instead of duplicating this literal "email" 5 times.(µ­¶êüÿÿÿÿ8Ë©îÇ1
+z	java:S116"YRename this field "JSON_FILE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷”è—øÿÿÿÿ8á©îÇ1
 ^
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(×ù¸Ö8ëÊÆ1
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(×ù¸Ö8ã©îÇ1
+>	java:S131ƒ""Add a default case to this switch.(¶„æ8•çğÇ1
+R
+java:S1144€"/Remove this unused private "converRole" method.(İĞÒ˜ıÿÿÿÿ8Ÿá¢ŸÇ1

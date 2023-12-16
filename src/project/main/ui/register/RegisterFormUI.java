@@ -22,8 +22,8 @@ public class RegisterFormUI extends JPanel {
     private UserService service = UserService.getInstance();
 
     // Thong tin
-    private JTextField textFieldFullname;
-    private JTextField textFieldUsername;
+    private JTextField textFieldFirstname;
+    private JTextField textFieldLastname;
     private JPasswordField passwordField;
     private JPasswordField retypePasswordField;
     private JTextField textFieldEmail;
@@ -35,7 +35,7 @@ public class RegisterFormUI extends JPanel {
     // Hoạt động kiểm tra
     private boolean isShowPassword = true;
     private boolean isShowPasswordRetype = true;
-    private final boolean[] isCheck = new boolean[5];
+    private final boolean[] isCheck = new boolean[4];
 
     public RegisterFormUI() {
         setLayout(new BorderLayout());
@@ -71,21 +71,21 @@ public class RegisterFormUI extends JPanel {
         jPanelFullName.setLayout(boxLayout);
 
         JPanel jPanelFN = new JPanel(new BorderLayout());
-        JLabel labelFullname = new JLabel("Họ tên của bạn");
+        JLabel labelFullname = new JLabel("Họ của bạn");
         labelFullname.setIcon(new ImageIcon(RegisterFormUI.class.getResource("id-card.png")));
         labelFullname.setFont(new Font("Arial", Font.PLAIN, 16));
         jPanelFN.add(labelFullname);
 
-        textFieldFullname = new JTextField();
-        textFieldFullname.setFont(new Font("Arial", Font.PLAIN, 16));
-        textFieldFullname.setBorder(
+        textFieldFirstname = new JTextField();
+        textFieldFirstname.setFont(new Font("Arial", Font.PLAIN, 16));
+        textFieldFirstname.setBorder(
                 BorderFactory.createCompoundBorder(
                         new LineBorder(Color.BLACK, 2),
                         BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
         jPanelFN.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
         jPanelFullName.add(jPanelFN, BorderLayout.WEST);
-        jPanelFullName.add(textFieldFullname);
+        jPanelFullName.add(textFieldFirstname);
         jPanel2.add(jPanelFullName);
 
         JPanel jPanelUsername = new JPanel();
@@ -93,21 +93,21 @@ public class RegisterFormUI extends JPanel {
         jPanelUsername.setLayout(boxLayout1);
 
         JPanel jPanelUS = new JPanel(new BorderLayout());
-        JLabel labelUsername = new JLabel("Tên tài khoản");
+        JLabel labelUsername = new JLabel("Tên của bạn");
         labelUsername.setIcon(new ImageIcon(RegisterFormUI.class.getResource("user.png")));
         labelUsername.setFont(new Font("Arial", Font.PLAIN, 16));
         jPanelUS.add(labelUsername);
 
-        textFieldUsername = new JTextField();
-        textFieldUsername.setFont(new Font("Arial", Font.PLAIN, 16));
-        textFieldUsername.setBorder(
+        textFieldLastname = new JTextField();
+        textFieldLastname.setFont(new Font("Arial", Font.PLAIN, 16));
+        textFieldLastname.setBorder(
                 BorderFactory.createCompoundBorder(
                         new LineBorder(Color.BLACK, 2),
                         BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
         jPanelUS.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
         jPanelUsername.add(jPanelUS, BorderLayout.WEST);
-        jPanelUsername.add(textFieldUsername);
+        jPanelUsername.add(textFieldLastname);
         jPanel2.add(jPanelUsername);
 
         JPanel jPanel3 = new JPanel(new GridLayout(1, 2, 20, 0));
@@ -250,8 +250,8 @@ public class RegisterFormUI extends JPanel {
         add(panelRight);
 
 
-        extractedFullname();
-        extractedUsername();
+        extractedName(textFieldFirstname);
+        extractedName(textFieldLastname);
         extractedEmail();
         extractedPassword();
         extractedRetypePassword();
@@ -259,15 +259,15 @@ public class RegisterFormUI extends JPanel {
     }
 
     private void actionListener() {
-        textFieldFullname.getDocument().addDocumentListener(new DocumentListener() {
+        textFieldFirstname.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                extractedFullname();
+                extractedName(textFieldFirstname);
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                extractedFullname();
+                extractedName(textFieldFirstname);
             }
 
             @Override
@@ -275,15 +275,15 @@ public class RegisterFormUI extends JPanel {
 
             }
         });
-        textFieldUsername.getDocument().addDocumentListener(new DocumentListener() {
+        textFieldLastname.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                extractedUsername();
+                extractedName(textFieldLastname);
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                extractedUsername();
+                extractedName(textFieldLastname);
             }
 
             @Override
@@ -343,16 +343,15 @@ public class RegisterFormUI extends JPanel {
         });
 
         buttonLogin.addActionListener(i -> {
-            String fullname = textFieldFullname.getText();
-            String username = textFieldUsername.getText();
+            String firstname = textFieldFirstname.getText();
+            String lastname = textFieldLastname.getText();
             String email = textFieldEmail.getText();
             String password = String.valueOf(passwordField.getPassword());
 
             if (service.addUser(new User(
-                    fullname,
-                    username,
+                    email.toLowerCase(),
                     password,
-                    email
+                    firstname + " " + lastname
             ))) {
                 JOptionPane.showMessageDialog(null, "Tạo tài khoản thành công");
                 LoginFormUI loginFormUi = new LoginFormUI();
@@ -380,27 +379,13 @@ public class RegisterFormUI extends JPanel {
     }
 
 
-    private void extractedFullname() {
-        String[] text = textFieldFullname.getText().trim().split(" "); // Trim to remove leading and trailing spaces
-        if (text.length >= 2) {
-            textFieldFullname.setBackground(null);
+    private void extractedName(JTextField text) {
+        if (text.getText().trim().length() >= 2) {
+            text.setBackground(null);
             isCheck[0] = true;
         } else {
-            textFieldFullname.setBackground(new Color(227, 114, 114));
+            text.setBackground(new Color(227, 114, 114));
             isCheck[0] = false;
-        }
-
-        extractedIsCheck();
-    }
-
-    private void extractedUsername() {
-        String text = textFieldUsername.getText().trim();
-        if (text.matches("[a-zA-Z0-9]{4,}")) {
-            textFieldUsername.setBackground(null);
-            isCheck[1] = true;
-        } else {
-            textFieldUsername.setBackground(new Color(227, 114, 114));
-            isCheck[1] = false;
         }
 
         extractedIsCheck();
@@ -410,10 +395,10 @@ public class RegisterFormUI extends JPanel {
         String text = textFieldEmail.getText();
         if (isValidEmail(text) || isValidPhoneNumber(text)) {
             textFieldEmail.setBackground(null);
-            isCheck[2] = true;
+            isCheck[1] = true;
         } else {
             textFieldEmail.setBackground(new Color(227, 114, 114));
-            isCheck[2] = false;
+            isCheck[1] = false;
         }
 
         extractedIsCheck();
@@ -422,10 +407,10 @@ public class RegisterFormUI extends JPanel {
     private void extractedPassword() {
         if (passwordField.getPassword().length < 1) {
             passwordField.setBackground(new Color(227, 114, 114));
-            isCheck[3] = false;
+            isCheck[2] = false;
         } else {
             passwordField.setBackground(null);
-            isCheck[3] = true;
+            isCheck[2] = true;
         }
 
         extractedIsCheck();
@@ -435,10 +420,10 @@ public class RegisterFormUI extends JPanel {
         if (!Arrays.equals(passwordField.getPassword(), retypePasswordField.getPassword()) ||
                 retypePasswordField.getPassword().length == 0) {
             retypePasswordField.setBackground(new Color(227, 114, 114));
-            isCheck[4] = false;
+            isCheck[3] = false;
         } else {
             retypePasswordField.setBackground(null);
-            isCheck[4] = true;
+            isCheck[3] = true;
         }
 
         extractedIsCheck();

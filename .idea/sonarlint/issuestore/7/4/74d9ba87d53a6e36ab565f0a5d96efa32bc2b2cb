@@ -1,4 +1,4 @@
 
 ¶
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ÔÄëª8‹ì‚®Æ1
-L	java:S106?"+Replace this use of System.out by a logger.(ì¦Õûÿÿÿÿ8•ì‚®Æ1
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ÔÄëª8ë†…Ç1
+L	java:S106="+Replace this use of System.out by a logger.(ì¦Õûÿÿÿÿ8ö†…Ç1

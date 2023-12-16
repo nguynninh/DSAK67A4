@@ -1,18 +1,26 @@
 [
   {
-    "password": "$2a$12$eq/M.NaM661ROvqaGdEJ7u2x3XbJjdakFipQbGYe6wg5G0pbtXk/G",
+    "password": "$2a$12$GPtSfEZEIUstVJWVqrRvVOulyoUbb1Om0yUY9JqxC4ShheXA3n1Gy",
+    "role": "Admin",
+    "scores": 10000,
     "id": 1,
     "fullname": "Nguyen Ninh",
-    "isempty": true,
-    "email": "nguyenninh@admin.com",
-    "username": "nguyenninh"
+    "email": "0376664344"
   },
   {
-    "password": "$2a$12$v07IuULmgakBiIIAUYWdGuaKsn7kC8C7ngRgFH4/ORNcxwneEjrCG",
+    "password": "$2a$12$VLfq/RAdHcJA7Jn1pnOqiO7rBo9IrhXxPtm8S7TG3Z6/6yGQfNvAW",
+    "role": "User",
+    "scores": 3000,
     "id": 2,
-    "fullname": "Le Van An",
-    "isempty": true,
-    "email": "levanan@gmail.com",
-    "username": "levanan"
+    "fullname": "Chu Van An",
+    "email": "chuvanan@gmail.com"
+  },
+  {
+    "password": "$2a$12$DbkdqL589xhKoqlxjNur4OMlGVNbwAFkUSx8daFRXpztI/1cuj5QK",
+    "role": "User",
+    "scores": 1200,
+    "id": 3,
+    "fullname": "Le Bao Hoa",
+    "email": "lebaohoa@gmail.com"
   }
 ]

@@ -1,39 +1,0 @@
-
-a	java:S112–"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
-]
-java:S1192>"GDefine a constant instead of duplicating this literal "Arial" 11 times.(Äàµ¿
-7
-java:S1170
-"!Make this final field static too.(®Ú»ª
-7
-java:S1170"!Make this final field static too.(¶¾ª‰
-q
-java:S1450"VRemove the "bthBill" field and declare it as a local variable in the relevant methods.(»—¶Ğøÿÿÿÿ
-q
-java:S1450"[Remove the "bthIntroduce" field and declare it as a local variable in the relevant methods.(ÏÈÏ±
-t
-java:S1450"YRemove the "btnAccount" field and declare it as a local variable in the relevant methods.(»›­¾ùÿÿÿÿ
-l
-java:S1450"VRemove the "btnExit" field and declare it as a local variable in the relevant methods.(±¿©–
-q
-java:S1450"VRemove the "btnHelp" field and declare it as a local variable in the relevant methods.(—¥Æûÿÿÿÿ
-q
-java:S1450"VRemove the "btnHome" field and declare it as a local variable in the relevant methods.(¦Äòƒıÿÿÿÿ
-s
-java:S1450"XRemove the "btnLogout" field and declare it as a local variable in the relevant methods.(ô«Áíüÿÿÿÿ
-x
-java:S1450"]Remove the "btnStatistical" field and declare it as a local variable in the relevant methods.(‡åôşüÿÿÿÿ
-C
-java:S1948"-Make "storeThread" transient or serializable.(œ…òÌ
-G
-java:S1874Ï"0Remove this use of "getHours"; it is deprecated.(¨õàè
-G
-java:S1874Ï"0Remove this use of "getHours"; it is deprecated.(¨õàè
-L
-java:S1874Ñ"0Remove this use of "getHours"; it is deprecated.(ò—³ëüÿÿÿÿ
-L
-java:S1874Ñ"0Remove this use of "getHours"; it is deprecated.(ò—³ëüÿÿÿÿ
-L
-java:S1874Ó"0Remove this use of "getHours"; it is deprecated.(İ©ñ«úÿÿÿÿ
-L
-java:S1874Ó"0Remove this use of "getHours"; it is deprecated.(İ©ñ«úÿÿÿÿ

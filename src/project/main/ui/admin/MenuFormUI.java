@@ -4,8 +4,6 @@ import project.main.ui.loginform.LoginFormUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class MenuFormUI extends JPanel {
     public final int sizeWidth = 200;
@@ -13,15 +11,15 @@ public class MenuFormUI extends JPanel {
 
     // Hanh dông
     public JLabel jLabelLogo;
-    private JLabel lblDashboard;
-    private JLabel lblCustomer;
-    private JLabel lblMessage;
-    private JLabel lblPayHistory;
-    private JLabel lblRepost;
-    private JLabel lblthem;
-    private JLabel lblAbout;
-    private JLabel lblSetting;
-    private JLabel lblLogout;
+    public JLabel lblDashboard;
+    public JLabel lblCustomer;
+    public JLabel lblMessage;
+    public JLabel lblPayHistory;
+    public JLabel lblRepost;
+    public JLabel lblthem;
+    public JLabel lblAbout;
+    public JLabel lblSetting;
+    public JLabel lblLogout;
 
     public MenuFormUI() {
         setLayout(new BorderLayout());
@@ -104,21 +102,6 @@ public class MenuFormUI extends JPanel {
     }
 
     private void actionListener() {
-        lblLogout.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                int option = JOptionPane.showConfirmDialog(
-                        null,
-                        "Bạn có chắc chắn muốn đăng xuất?",
-                        "Xác nhận đăng xuất",
-                        JOptionPane.YES_NO_OPTION
-                );
-
-                if (option == JOptionPane.YES_OPTION) {
-                    performLogout();
-                }
-            }
-        });
 
     }
 

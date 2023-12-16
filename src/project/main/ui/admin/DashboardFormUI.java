@@ -1,12 +1,14 @@
 package project.main.ui.admin;
 
 import project.main.ui.loginform.LoginFormUI;
+import project.main.user.User;
 import project.main.user.UserService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 public class DashboardFormUI extends JPanel {
     private final int sizeWidth = 1000;
@@ -19,7 +21,10 @@ public class DashboardFormUI extends JPanel {
     private JPanel panelMenuClose;
     private JPanel panelContent;
     private JLabel lblMenu;
+    private JLabel lblRepost;
     private JLabel lblLogout;
+    private JPanel panelUser;
+    private JPanel jPanelUB;
 
     public DashboardFormUI() {
         setLayout(new BorderLayout());
@@ -58,24 +63,15 @@ public class DashboardFormUI extends JPanel {
 
         JLabel lblDashboard = new JLabel();
         lblDashboard.setIcon(resizeImageIcon("dashboard.png", 25, 25));
-        lblDashboard.setFont(new Font("Arial", Font.BOLD, 16));
-        lblDashboard.setForeground(Color.BLACK);
         JLabel lblCustomer = new JLabel();
         lblCustomer.setIcon(resizeImageIcon("group.png", 25, 25));
-        lblCustomer.setFont(new Font("Arial", Font.BOLD, 16));
-        lblCustomer.setForeground(Color.BLACK);
         JLabel lblMessage = new JLabel();
         lblMessage.setIcon(resizeImageIcon("comments.png", 25, 25));
-        lblMessage.setFont(new Font("Arial", Font.BOLD, 16));
-        lblMessage.setForeground(Color.BLACK);
         JLabel lblPayHistory = new JLabel();
         lblPayHistory.setIcon(resizeImageIcon("credit-card.png", 25, 25));
-        lblPayHistory.setFont(new Font("Arial", Font.BOLD, 16));
-        lblPayHistory.setForeground(Color.BLACK);
-        JLabel lblRepost = new JLabel();
+        lblRepost = new JLabel();
         lblRepost.setIcon(resizeImageIcon("retweet.png", 25, 25));
-        lblRepost.setFont(new Font("Arial", Font.BOLD, 16));
-        lblRepost.setForeground(Color.BLACK);
+
         JLabel lblthem = new JLabel();
         lblthem.setIcon(resizeImageIcon("settings-sliders.png", 25, 25));
         lblthem.setFont(new Font("Arial", Font.BOLD, 16));
@@ -116,9 +112,14 @@ public class DashboardFormUI extends JPanel {
         add(panelMenuClose, BorderLayout.WEST);
 
         //Panel Right
-        panelContent = new JPanel(new BorderLayout());
-        panelContent.setPreferredSize(new Dimension((int) (sizeWidth * 0.93), sizeHeight));
-        panelContent.setBackground(new Color(233, 221, 213));
+        panelContent = extractedContentPanel(panelContent);
+        add(panelContent, BorderLayout.EAST);
+    }
+
+    private JPanel extractedContentPanel(JPanel panel) {
+        panel = new JPanel(new BorderLayout());
+        panel.setPreferredSize(new Dimension((int) (sizeWidth * 0.93), sizeHeight));
+        panel.setBackground(new Color(233, 221, 213));
 
         JPanel panelTop = new JPanel(new BorderLayout());
         panelTop.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.08)));
@@ -157,7 +158,7 @@ public class DashboardFormUI extends JPanel {
         panelTopRight.add(jLabelEmail);
         panelTopRight.add(jLabelAvatar);
         panelTop.add(panelTopRight, BorderLayout.EAST);
-        panelContent.add(panelTop, BorderLayout.NORTH);
+        panel.add(panelTop, BorderLayout.NORTH);
 
         JPanel jPanelBottom = new JPanel(new BorderLayout());
         jPanelBottom.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.92)));
@@ -166,21 +167,21 @@ public class DashboardFormUI extends JPanel {
         panelOverview.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.3)));
         panelOverview.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         panelOverview.setBackground(null);
-        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + userService.getAllUsers().size(), "Đang trên đà phát triển mạnh");
-        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + userService.getAllUsers().size(), "Đang trên đà phát triển mạnh");
-        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + userService.getAllUsers().size(), "Đang trên đà phát triển mạnh");
+        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + getSized(), "Đang trên đà phát triển mạnh");
+        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + getSized(), "Đang trên đà phát triển mạnh");
+        extractedPanelOverview(panelOverview, "group.png", "Customer", "Số nguời: " + getSized(), "Đang trên đà phát triển mạnh");
         jPanelBottom.add(panelOverview, BorderLayout.NORTH);
 
         JPanel panelNav = new JPanel(new BorderLayout());
+        panelNav.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
         panelNav.setPreferredSize(new Dimension((int) (sizeWidth - sizeWidth * 0.07), (int) (sizeHeight * 0.62)));
 
-        JPanel panelUser = new JPanel(new BorderLayout());
+        panelUser = new JPanel(new BorderLayout());
         panelUser.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.62)));
-        panelUser.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
-        panelUser.setBackground(Color.CYAN);
+        panelUser.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(Color.BLACK, 2), BorderFactory.createEmptyBorder(0, 0, 0, 0)));
 
         JPanel jPanelUT = new JPanel(new BorderLayout());
-        jPanelUT.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.07)));
+        jPanelUT.setPreferredSize(new Dimension(600, 40));
         JPanel jPanelUTL = new JPanel(new FlowLayout());
         JLabel jLabelUTL = new JLabel("Data User");
         jLabelUTL.setIcon(resizeImageIcon("data.png", 28, 28));
@@ -190,10 +191,12 @@ public class DashboardFormUI extends JPanel {
         jPanelUT.add(jPanelUTL, BorderLayout.WEST);
         panelUser.add(jPanelUT, BorderLayout.NORTH);
 
-//        JPanel jPanelUB = new JPanel(new GridLayout(5, 1));
-//        jPanelUT.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.62 - sizeHeight * 0.07)));
-//        jPanelUB.setBackground(Color.orange);
-//        panelUser.add(jPanelUB, BorderLayout.SOUTH);
+        jPanelUB = new JPanel();
+        jPanelUB.setBorder(BorderFactory.createEmptyBorder(10, -10, -10, -10));
+        jPanelUB.setLayout(new BoxLayout(jPanelUB, BoxLayout.Y_AXIS));
+        jPanelUB.setPreferredSize(new Dimension(600, (int) (sizeHeight * 0.62 - sizeHeight * 0.06)));
+        addListMenuFromUi(jPanelUB);
+        panelUser.add(jPanelUB, BorderLayout.SOUTH);
 
         panelNav.add(panelUser, BorderLayout.WEST);
 
@@ -205,9 +208,10 @@ public class DashboardFormUI extends JPanel {
 
         jPanelBottom.add(panelNav, BorderLayout.SOUTH);
 
-        panelContent.add(jPanelBottom, BorderLayout.SOUTH);
-        add(panelContent, BorderLayout.EAST);
+        panel.add(jPanelBottom, BorderLayout.SOUTH);
+        return panel;
     }
+
 
     private void extractedPanelOverview(JPanel panelOverview, String img, String name, String value, String comment) {
         JPanel jPanelLeftOv = new JPanel(new GridLayout(4, 1));
@@ -242,14 +246,10 @@ public class DashboardFormUI extends JPanel {
             }
         });
 
-        panelMenuOpen.jLabelLogo.addMouseListener(new MouseAdapter() {
+        lblRepost.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                remove(panelMenuOpen);
-                add(panelMenuClose, BorderLayout.WEST);
-                panelContent.setPreferredSize(new Dimension((int) (sizeWidth * 0.93), sizeHeight));
-                revalidate();
-                repaint();
+                loadRepaintPanelContent();
             }
         });
 
@@ -268,6 +268,90 @@ public class DashboardFormUI extends JPanel {
                 }
             }
         });
+
+        panelMenuOpen.jLabelLogo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                remove(panelMenuOpen);
+                add(panelMenuClose, BorderLayout.WEST);
+                panelContent.setPreferredSize(new Dimension((int) (sizeWidth * 0.93), sizeHeight));
+                revalidate();
+                repaint();
+            }
+        });
+
+        panelMenuOpen.lblRepost.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                loadRepaintPanelContent();
+            }
+        });
+
+        panelMenuOpen.lblLogout.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int option = JOptionPane.showConfirmDialog(
+                        null,
+                        "Bạn có chắc chắn muốn đăng xuất?",
+                        "Xác nhận đăng xuất",
+                        JOptionPane.YES_NO_OPTION
+                );
+
+                if (option == JOptionPane.YES_OPTION) {
+                    performLogout();
+                }
+            }
+        });
+    }
+
+    private int getSized() {
+        List<User> userList = userService.getAllUsers();
+
+        int count = 0;
+        for (User user : userList) {
+            if (!user.isEmpty())
+                count++;
+        }
+
+        return count;
+    }
+
+    private void addListMenuFromUi(JPanel jPanel) {
+        List<User> userList = userService.getAllUsers().reversed();
+        for (int i = 0; i < Math.min(userList.size(), 6); i++) {
+            if (!userList.get(i).isEmpty()) {
+                CustomUserShow cs = new CustomUserShow(userList.get(i));
+                int finalI = i;
+                cs.lblEditor.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        loadRepaintPanelContent();
+                    }
+                });
+                cs.lblRemove.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        userService.softDeleteUser(userList.get(finalI).getId());
+
+                        loadRepaintPanelContent();
+                    }
+                });
+                jPanel.add(cs);
+            }
+        }
+        if (userList.size() < 6)
+            for (int i = 0; i < 6 - userList.size(); i++) {
+                jPanel.add(new CustomUserShow(null));
+            }
+    }
+
+    private void loadRepaintPanelContent() {
+        remove(panelContent);
+        panelContent = extractedContentPanel(panelContent);
+        add(panelContent, BorderLayout.EAST);
+
+        revalidate();
+        repaint();
     }
 
     private void performLogout() {
@@ -279,7 +363,7 @@ public class DashboardFormUI extends JPanel {
         frame.repaint();
     }
 
-    private ImageIcon resizeImageIcon(String imagePath, int width, int height) {
+    public static ImageIcon resizeImageIcon(String imagePath, int width, int height) {
         ImageIcon icon = new ImageIcon(DashboardFormUI.class.getResource(imagePath));
         Image image = icon.getImage();
         Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);

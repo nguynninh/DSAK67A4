@@ -1,36 +1,110 @@
 package project.main.user;
 
 public class User {
-    public int id;
-    public String fullname;
-    public String username;
-    public String password;
-    public String email;
-    public boolean isEmpty;
+    private int id;
+    private String email;
+    private String password;
+    private String fullname;
+    private long scores;
+    private int role;
 
-    public User(int id, String fullname, String username, String password, String email, boolean isEmpty) {
+    public User(int id, String email, String password, String fullname, long scores, int role) {
         this.id = id;
-        this.fullname = fullname;
-        this.username = username;
-        this.password = password;
         this.email = email;
-        this.isEmpty = isEmpty;
+        this.password = password;
+        this.fullname = fullname;
+        this.scores = scores;
+        this.role = role;
     }
 
-    public User(String fullname, String username, String password, String email) {
-        this.fullname = fullname;
-        this.username = username;
+    public User(int id, String email, String password, String fullname) {
+        this.id = id;
+        this.email = email;
         this.password = password;
+        this.fullname = fullname;
+        this.scores = 0;
+        this.role = 1;
+    }
+
+    public User(String email, String password, String fullname) {
+        this.email = email;
+        this.password = password;
+        this.fullname = fullname;
+        this.role = 1;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public long getScores() {
+        return scores;
+    }
+
+    public String getRole() {
+        String s = "";
+
+        switch (role) {
+            case 0 -> s = "";
+            case 1 -> s = "User";
+            case 2 -> s = "Admin";
+            case 3 -> s = "SuperAdmin";
+        }
+
+        return s;
+    }
+
+    public int getRoleToInt(){
+        return role;
+    }
+
+    public String getRole(User user) {
+        String s = "";
+
+        switch (Math.max(this.role, user.role)){
+            case 0 -> s = "";
+            case 1 -> s = "User";
+            case 2 -> s = "Admin";
+            case 3 -> s = "SuperAdmin";
+        }
+
+        return s;
+    }
+
+    public boolean isEmpty(){
+        return role == 0;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "User " + id + ": " +
-                "\n\tfullname='" + fullname + '\'' +
-                "\n\tusername='" + username + '\'' +
-                "\n\tpassword='" + password + '\'' +
-                "\n\temail='" + email + '\'' +
-                "\n\tisEmpty=" + isEmpty;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public void setScores(long scores) {
+        this.scores = scores;
+    }
+
+    public void setRole(int role) {
+
+        this.role = role;
     }
 }

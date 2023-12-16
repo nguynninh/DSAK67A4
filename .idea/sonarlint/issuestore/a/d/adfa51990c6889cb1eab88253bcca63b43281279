@@ -1,13 +1,3 @@
 
-p
-java:S1104"NMake id a static final constant or non-public and provide accessors if needed.(ÍéÌ‘øÿÿÿÿ8±£·¬Æ1
-v
-java:S1104"TMake fullname a static final constant or non-public and provide accessors if needed.(ŒÏœÅüÿÿÿÿ8´£·¬Æ1
-q
-java:S1104"TMake username a static final constant or non-public and provide accessors if needed.(Ü±›Ô8µ£·¬Æ1
-v
-java:S1104"TMake password a static final constant or non-public and provide accessors if needed.(¼şòüÿÿÿÿ8·£·¬Æ1
-s
-java:S1104"QMake email a static final constant or non-public and provide accessors if needed.(¾Æ†Ëıÿÿÿÿ8·£·¬Æ1
-u
-java:S1104	"SMake isEmpty a static final constant or non-public and provide accessors if needed.(àæ±÷øÿÿÿÿ8·£·¬Æ1
+=	java:S131;""Add a default case to this switch.(¶„æ8­Ø—Ç1
+>	java:S131L""Add a default case to this switch.(“ƒÂ8°Ø—Ç1

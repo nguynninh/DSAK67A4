@@ -229,23 +229,25 @@ public class LoginFormUI extends JPanel {
                 return;
             }
 
-            if (saveAccount) saveUserProperties(username, password);
+            if (userService.getUsers(username).getRoleToInt() > 1) {
+                if (saveAccount) saveUserProperties(username, password);
 
-            if (username.contains("@admin.com")) {
                 DashboardFormUI dashboardFormUI = new DashboardFormUI();
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(buttonLogin);
                 frame.getContentPane().removeAll();
                 frame.getContentPane().add(dashboardFormUI);
                 frame.pack();
                 frame.repaint();
-            }else {
+            } else if (userService.getUsers(username).getRoleToInt() == 1) {
+                if (saveAccount) saveUserProperties(username, password);
+
                 SettingPanel playStore = new SettingPanel();
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(buttonLogin);
                 frame.getContentPane().removeAll();
                 frame.getContentPane().add(playStore);
                 frame.pack();
                 frame.repaint();
-            }
+            } else JOptionPane.showMessageDialog(null, "Tài khoản của bạn đã bị khóa");
         });
 
         lblQuenPass.addMouseListener(new MouseAdapter() {

@@ -21,33 +21,30 @@ public class UserRepository {
     public boolean addUser(User user) {
         JSONArray jsonArray = readJsonFile();
 
-        if (isUsernameOrEmailExists(jsonArray, user.username, user.email))
+        if (isUsernameOrEmailExists(jsonArray, user.getEmail())) {
             return false;
-        
+        }
+
         JSONObject userJson = new JSONObject();
         userJson.put("id", getPreviousId(jsonArray) + 1);
-        userJson.put("fullname", user.fullname);
-        userJson.put("username", user.username);
-        userJson.put("email", user.email);
-        userJson.put("password", user.password);
-        userJson.put("isempty", user.isEmpty);
+        userJson.put("email", user.getEmail());
+        userJson.put("password", user.getPassword());
+        userJson.put("fullname", user.getFullname());
+        userJson.put("scores", user.getScores());
+        userJson.put("role", user.getRole());
         jsonArray.put(userJson);
 
         writeJsonFile(jsonArray);
         return true;
     }
 
-    private boolean isUsernameOrEmailExists(JSONArray jsonArray, String username, String email) {
+    private boolean isUsernameOrEmailExists(JSONArray jsonArray, String email) {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject userJson = jsonArray.getJSONObject(i);
-            String existingUsername = userJson.getString("username");
             String existingEmail = userJson.getString("email");
-
-            if (existingUsername.equals(username) || existingEmail.equals(email)) {
+            if (existingEmail.equals(email))
                 return true;
-            }
         }
-
         return false;
     }
 
@@ -96,15 +93,13 @@ public class UserRepository {
         return null;
     }
 
-    public User getUserByUsernameOrEmail(String username) {
+    public User getUserByEmail(String username) {
         JSONArray jsonArray = readJsonFile();
 
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject userJson = jsonArray.getJSONObject(i);
-            String us = userJson.getString("username");
-            String email = userJson.getString("email");
 
-            if (username.equals(us) || username.equals(email)) {
+            if (username.equals(userJson.getString("email"))) {
                 return jsonToUser(userJson);
             }
         }
@@ -115,17 +110,54 @@ public class UserRepository {
     private User jsonToUser(JSONObject userJson) {
         return new User(
                 userJson.getInt("id"),
-                userJson.getString("fullname"),
-                userJson.getString("username"),
-                userJson.getString("password"),
                 userJson.getString("email"),
-                userJson.getBoolean("isempty")
+                userJson.getString("password"),
+                userJson.getString("fullname"),
+                userJson.getLong("scores"),
+                converRole(userJson.getString("role"))
         );
     }
 
-    public void updateUser(User updatedUser) {
-
+    private int converRole(String role) {
+        if  (role.equalsIgnoreCase("user")) return 1;
+        else if  (role.equalsIgnoreCase("admin")) return 2;
+        else if  (role.equalsIgnoreCase("superadmin")) return 3;
+        else return 0;
     }
+
+    private String converRole(char role) {
+        String s = "";
+
+        switch (role) {
+            case 0 -> s = "";
+            case 1 -> s = "User";
+            case 2 -> s = "Admin";
+            case 3 -> s = "SuperAdmin";
+        }
+
+        return s;
+    }
+
+    public void updateUser(User updatedUser) {
+        JSONArray jsonArray = readJsonFile();
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject userJson = jsonArray.getJSONObject(i);
+            int userId = userJson.getInt("id");
+
+            if (userId == updatedUser.getId()) {
+                userJson.put("email", updatedUser.getEmail());
+                userJson.put("password", updatedUser.getPassword());
+                userJson.put("fullname", updatedUser.getFullname());
+                userJson.put("scores", updatedUser.getScores());
+                userJson.put("role", converRole(updatedUser.getRole()));
+
+                writeJsonFile(jsonArray);
+                return;
+            }
+        }
+    }
+
 
     public List<User> getAllUsers() {
         JSONArray jsonArray = readJsonFile();
