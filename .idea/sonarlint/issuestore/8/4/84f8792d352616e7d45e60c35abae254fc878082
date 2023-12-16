@@ -1,0 +1,22 @@
+
+h
+java:S1192!"FDefine a constant instead of duplicating this literal "Arial" 3 times.(å™şÿÿÿÿ8ò×¿›Ç1
+w
+java:S1104"UMake lblEditor a static final constant or non-public and provide accessors if needed.(’Ûß©ùÿÿÿÿ8ÖüÔ›Ç1
+w
+java:S1104"UMake lblRemove a static final constant or non-public and provide accessors if needed.(˜ü£Íûÿÿÿÿ8ƒšÕ›Ç1
+C
+java:S1170
+"!Make this final field static too.(‹¾Ò‚üÿÿÿÿ8ƒØ¿›Ç1
+>
+java:S1170"!Make this final field static too.(€İ¼ğ8ƒØ¿›Ç1
+
+java:S1186J"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(“ßÙ¨8Û¬Ó›Ç1
+O
+java:S1948"-Make "userService" transient or serializable.(äüçˆùÿÿÿÿ8…Ø¿›Ç1
+H
+java:S1172J"+Remove this unused method parameter "user".(“ßÙ¨8æ¬Ó›Ç1
+f
+java:S3252P"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8‹úÀ›Ç1
+Q
+java:S1068"/Remove this unused "userService" private field.(äüçˆùÿÿÿÿ8ò¬Ó›Ç1
