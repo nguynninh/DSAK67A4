@@ -174,25 +174,7 @@ public class SettingPanel extends JPanel implements Runnable {
 
             appPanelBody.add(calulatorPanel);
 
-            // Facebook
-            JPanel fbPanel = new JPanel();
-            fbPanel.setLayout(new BorderLayout());
-            fbPanel.setPreferredSize(new Dimension(150, 190));
-
-            JButton imgFB = new JButton();
-            imgFB.setPreferredSize(new Dimension(150, 150));
-            imgFB.setBackground(colorBg);
-            imgFB.setBorderPainted(false);
-            fbPanel.add(imgFB, BorderLayout.NORTH);
-            loadLogo(imgFB, "apps/pr2/logo.png");
-
-            JButton playFB = new JButton("Vào ngay");
-            playFB.setPreferredSize(new Dimension(150, 40));
-            fbPanel.add(playFB, BorderLayout.SOUTH);
-
-            appPanelBody.add(fbPanel);
-
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 5; i++) {
                 JPanel panel = new JPanel();
                 panel.setLayout(new BorderLayout());
                 panel.setPreferredSize(new Dimension(150, 190));

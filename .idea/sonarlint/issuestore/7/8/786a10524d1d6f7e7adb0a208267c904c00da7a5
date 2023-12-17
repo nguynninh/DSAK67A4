@@ -1,15 +1,13 @@
 
-h	java:S112Í"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8éë™ãÆ1
+h	java:S112»"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8éë™ãÆ1
 t
-java:S1192ï"VDefine a constant instead of duplicating this literal "Äang khá»Ÿi Ä‘á»™ng " 4 times.(­ü´ğ8ìë™ãÆ1
+java:S1192İ"VDefine a constant instead of duplicating this literal "Äang khá»Ÿi Ä‘á»™ng " 4 times.(­ü´ğ8ìë™ãÆ1
 c
 java:S1192Y"FDefine a constant instead of duplicating this literal "Arial" 5 times.(·Òƒµ8ìë™ãÆ1
-h
-java:S1192£"JDefine a constant instead of duplicating this literal "VÃ o ngay" 3 times.(Ù‚â8íë™ãÆ1
 d
-java:S1192ï"FDefine a constant instead of duplicating this literal " ...." 4 times.(­ü´ğ8íë™ãÆ1
+java:S1192İ"FDefine a constant instead of duplicating this literal " ...." 4 times.(­ü´ğ8íë™ãÆ1
 F
-java:S1604ä"(Make this anonymous inner class a lambda(ÉãÃ®8íë™ãÆ1
+java:S1604Ò"(Make this anonymous inner class a lambda(ÉãÃ®8íë™ãÆ1
 {	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(öèú£üÿÿÿÿ8½ù„£Ç1
 v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(·–£ˆ8Íì™ãÆ1
 {	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(óè€Œıÿÿÿÿ8Íì™ãÆ1
@@ -36,22 +34,22 @@ java:S3252•"[Use static access with "javax.swing.ScrollPaneConstants" for "HOR
 H	java:S106§"+Replace this use of System.out by a logger.(è åù8í™ãÆ1
 ^	java:S125ª"<This block of commented-out lines of code should be removed.(«™¤Ùıÿÿÿÿ8í™ãÆ1
 y
-java:S3252è"[Use static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_ALWAYS".(Ğ÷­„8—í™ãÆ1
-H	java:S106ï"+Replace this use of System.out by a logger.(­ü´ğ8˜í™ãÆ1
-H	java:S106ı"+Replace this use of System.out by a logger.(Ù÷ê—8œí™ãÆ1
+java:S3252Ö"[Use static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_ALWAYS".(Ğ÷­„8—í™ãÆ1
+H	java:S106İ"+Replace this use of System.out by a logger.(­ü´ğ8˜í™ãÆ1
+H	java:S106ë"+Replace this use of System.out by a logger.(Ù÷ê—8œí™ãÆ1
 J
-java:S1602ş",Remove useless curly braces around statement(®Ì»ê8œí™ãÆ1
+java:S1602ì",Remove useless curly braces around statement(®Ì»ê8œí™ãÆ1
 V
-java:S1612ş"8Replace this lambda with method reference 'Window::new'.(®Ì»ê8í™ãÆ1
-M	java:S106‰"+Replace this use of System.out by a logger.(‡¶Ù¾ùÿÿÿÿ8Ÿí™ãÆ1
+java:S1612ì"8Replace this lambda with method reference 'Window::new'.(®Ì»ê8í™ãÆ1
+M	java:S106÷"+Replace this use of System.out by a logger.(‡¶Ù¾ùÿÿÿÿ8Ÿí™ãÆ1
 Y
-java:S1612Š";Replace this lambda with method reference 'TicTacToe::new'.(’¶ä²8 í™ãÆ1
-H	java:S106’"+Replace this use of System.out by a logger.(Ìì‹›8¡í™ãÆ1
+java:S1612ø";Replace this lambda with method reference 'TicTacToe::new'.(’¶ä²8 í™ãÆ1
+H	java:S106€"+Replace this use of System.out by a logger.(Ìì‹›8¡í™ãÆ1
 ]
-java:S1612“":Replace this lambda with method reference 'SudokuUI::new'.(ìüÊ¢ÿÿÿÿÿ8¢í™ãÆ1
+java:S1612":Replace this lambda with method reference 'SudokuUI::new'.(ìüÊ¢ÿÿÿÿÿ8¢í™ãÆ1
 J
-java:S1602Ò",Remove useless curly braces around statement(Åº÷8¬í™ãÆ1
+java:S1602À",Remove useless curly braces around statement(Åº÷8¬í™ãÆ1
 N
-java:S1172"+Remove this unused method parameter "name".(øÔéúÿÿÿÿ8³í™ãÆ1
+java:S1172ï"+Remove this unused method parameter "name".(øÔéúÿÿÿÿ8³í™ãÆ1
 P
 java:S1068".Remove this unused "imageStore" private field.(†òÿøÿÿÿÿ8¶í™ãÆ1
