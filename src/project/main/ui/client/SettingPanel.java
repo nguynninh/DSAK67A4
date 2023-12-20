@@ -1,6 +1,7 @@
 package project.main.ui.client;
 
 import homework4.exercise3.controllers.CaculatorPanel;
+import project.main.apps.busmaps.busStation.Main;
 import project.main.games.game2048.game.Game;
 import project.main.games.game2048.ui.GamePanel;
 import project.main.games.snake.view.Window;
@@ -149,32 +150,29 @@ public class SettingPanel extends JPanel implements Runnable {
             scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
             // Caculator
-            JPanel calulatorPanel = new JPanel();
-            calulatorPanel.setLayout(new BorderLayout());
-            calulatorPanel.setPreferredSize(new Dimension(150, 190));
-
-            JButton imgCalulator = new JButton();
-            imgCalulator.setPreferredSize(new Dimension(150, 150));
-            imgCalulator.setBackground(colorBg);
-            imgCalulator.setBorderPainted(false);
-            calulatorPanel.add(imgCalulator, BorderLayout.NORTH);
-            loadLogo(imgCalulator, "apps/caculator/logo.png");
-
-            JButton playCaculator = new JButton("Vào ngay");
-            playCaculator.setPreferredSize(new Dimension(150, 40));
-            calulatorPanel.add(playCaculator, BorderLayout.SOUTH);
-            playCaculator.addActionListener(i -> {
-                System.out.println("Đang khởi động máy tính ....");
-                Thread thread = new Thread(() -> new CaculatorPanel().showWindowns());
-
-//                thread.setDaemon(true);
-
+            Object[] calulator = getPanelApplication("caculator/logo.png");
+            ((JButton) calulator[1]).addActionListener(i -> {
+                System.out.println("Đang khởi động Máy tính ....");
+                Thread thread = new Thread(()
+                        -> new CaculatorPanel().showWindowns());
                 thread.start();
             });
+            appPanelBody.add((JPanel) calulator[0]);
 
-            appPanelBody.add(calulatorPanel);
+            // Bus
+            Object[] bus = getPanelApplication("busmaps/logo.png");
+            ((JButton) bus[1]).addActionListener(i -> {
+                System.out.println("Đang khởi động Máy tính ....");
+                Thread thread = new Thread(()
+                        -> {
+                    Main main = new Main();
+                    main.setVisible(true);
+                });
+                thread.start();
+            });
+            appPanelBody.add((JPanel) bus[0]);
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 4; i++) {
                 JPanel panel = new JPanel();
                 panel.setLayout(new BorderLayout());
                 panel.setPreferredSize(new Dimension(150, 190));
@@ -215,10 +213,10 @@ public class SettingPanel extends JPanel implements Runnable {
 
 
             // Game 2048
-            Object[] game2048 = createBannerGame("Game 2048", "game2048/logo.png");
+            Object[] game2048 = getPanelGame("game2048/logo.png");
             gamePanelBody.add((Component) game2048[0]);
-            ((JButton) game2048[2]).addActionListener(i -> {
-                System.out.println("Đang khởi động " + "Game 2048" + " ....");
+            ((JButton) game2048[1]).addActionListener(i -> {
+                System.out.println("Đang khởi động Game 2048...");
                 Thread thread = new Thread(() -> {
                     GamePanel panel = new GamePanel();
                     Game game = new Game(panel);
@@ -229,9 +227,9 @@ public class SettingPanel extends JPanel implements Runnable {
             });
 
             // Rắn ăn mồi
-            Object[] gameSnake = createBannerGame("Rắn ăn mồi", "snake/logo.png");
+            Object[] gameSnake = getPanelGame("snake/logo.png");
             gamePanelBody.add((Component) gameSnake[0]);
-            ((JButton) gameSnake[2]).addActionListener(i -> {
+            ((JButton) gameSnake[1]).addActionListener(i -> {
                 System.out.println("Đang khởi động " + "Rắn ăn mồi" + " ....");
                 Thread thread = new Thread(() -> {
                     new Window();
@@ -241,18 +239,18 @@ public class SettingPanel extends JPanel implements Runnable {
             });
 
             // TicTacToe
-            Object[] gameTicTacToe = createBannerGame("TicTacToe", "tictactoe/logo.png");
+            Object[] gameTicTacToe = getPanelGame("tictactoe/logo.png");
             gamePanelBody.add((Component) gameTicTacToe[0]);
-            ((JButton) gameTicTacToe[2]).addActionListener(i -> {
+            ((JButton) gameTicTacToe[1]).addActionListener(i -> {
                 System.out.println("Đang khởi động " + "TicTacToe" + " ....");
                 Thread thread = new Thread(() -> new TicTacToe());
                 thread.start();
             });
 
             // Sukudo
-            Object[] gameSukudo = createBannerGame("Sudoku", "sudoku/logo.png");
+            Object[] gameSukudo = getPanelGame("sudoku/logo.png");
             gamePanelBody.add((Component) gameSukudo[0]);
-            ((JButton) gameSukudo[2]).addActionListener(i -> {
+            ((JButton) gameSukudo[1]).addActionListener(i -> {
                 System.out.println("Đang khởi động " + "Sudoku" + " ....");
                 Thread thread = new Thread(() -> new SudokuUI());
                 thread.start();
@@ -322,6 +320,32 @@ public class SettingPanel extends JPanel implements Runnable {
         });
     }
 
+    private Object[] getPanelApplication(String imageStore) throws IOException {
+        return getjPanel("apps/" + imageStore, "Bắt đầu");
+    }
+
+    private Object[] getPanelGame(String imageStore) throws IOException {
+        return getjPanel("games/" + imageStore, "Chơi ngay");
+    }
+
+    private Object[] getjPanel(String folder, String btn2Name) throws IOException {
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        panel.setPreferredSize(new Dimension(150, 190));
+
+        JButton img = new JButton();
+        img.setPreferredSize(new Dimension(150, 150));
+        img.setBackground(colorBg);
+        img.setBorderPainted(false);
+        panel.add(img, BorderLayout.NORTH);
+        loadLogo(img, folder);
+
+        JButton play = new JButton(btn2Name);
+        play.setPreferredSize(new Dimension(150, 40));
+        panel.add(play, BorderLayout.SOUTH);
+        return new Object[]{panel, play};
+    }
+
     private void loadLogo(JButton button, String image) throws IOException {
         button.setIcon(
                 new ImageIcon(ImageIO.read(SettingPanel.class.getResource("../../" + image))
@@ -356,31 +380,6 @@ public class SettingPanel extends JPanel implements Runnable {
                         )
                 )
         );
-    }
-
-    /**
-     * @param name
-     * @param img
-     * @return Object[] - JPanel, btnImg, btnPlay
-     * @throws IOException
-     */
-    private Object[] createBannerGame(String name, String img) throws IOException {
-        JPanel panelGame = new JPanel();
-        panelGame.setLayout(new BorderLayout());
-        panelGame.setPreferredSize(new Dimension(150, 190));
-
-        JButton btnImg = new JButton();
-        btnImg.setPreferredSize(new Dimension(150, 150));
-        btnImg.setBackground(colorBg);
-        btnImg.setBorderPainted(false);
-        panelGame.add(btnImg, BorderLayout.NORTH);
-        loadLogo(btnImg, "games/" + img);
-
-        JButton playGame = new JButton("Choi ngay");
-        playGame.setPreferredSize(new Dimension(150, 40));
-        panelGame.add(playGame, BorderLayout.SOUTH);
-
-        return new Object[]{panelGame, btnImg, playGame};
     }
 
 }
